@@ -1,0 +1,23 @@
+# Interactive session:  ./sim
+/run/initialize
+
+/vis/open OGL 800x600
+/vis/viewer/set/viewpointVector 0 -2 1
+/vis/drawVolume
+/vis/viewer/set/style surface
+/vis/viewer/set/autoRefresh true
+
+# Wells are daughters of the plate, so hide the plate with this
+# rather than deleting it from the geometry:
+# /vis/geometry/set/visibility Plate 0 false
+
+# Print the volume hierarchy (should list 48 "Well" entries, each with "Liquid"):
+# /vis/ASCIITree/verbose 4
+# /vis/drawTree
+
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts false
+/vis/scene/endOfEventAction accumulate 50
+
+# Then try:  /run/beamOn 20

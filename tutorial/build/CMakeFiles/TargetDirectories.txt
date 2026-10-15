@@ -1,0 +1,4 @@
+/Users/basranlab/Applications/Geant4/tutorial/build/CMakeFiles/sim.dir
+/Users/basranlab/Applications/Geant4/tutorial/build/CMakeFiles/Tutorial.dir
+/Users/basranlab/Applications/Geant4/tutorial/build/CMakeFiles/edit_cache.dir
+/Users/basranlab/Applications/Geant4/tutorial/build/CMakeFiles/rebuild_cache.dir

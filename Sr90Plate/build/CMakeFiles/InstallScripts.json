@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/basranlab/Applications/Geant4/Sr90Plate/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
