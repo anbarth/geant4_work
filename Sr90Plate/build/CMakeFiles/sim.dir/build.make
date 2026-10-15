@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/basranlab/Applications/Geant4/Sr90Plate
+CMAKE_SOURCE_DIR = /Users/basranlab/Applications/Geant4/work/Sr90Plate
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/basranlab/Applications/Geant4/Sr90Plate/build
+CMAKE_BINARY_DIR = /Users/basranlab/Applications/Geant4/work/Sr90Plate/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sim.dir/depend.make
@@ -73,139 +73,139 @@ CMakeFiles/sim.dir/codegen:
 .PHONY : CMakeFiles/sim.dir/codegen
 
 CMakeFiles/sim.dir/sim.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/sim.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/sim.cc
+CMakeFiles/sim.dir/sim.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/sim.cc
 CMakeFiles/sim.dir/sim.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sim.dir/sim.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/sim.cc.o -MF CMakeFiles/sim.dir/sim.cc.o.d -o CMakeFiles/sim.dir/sim.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/sim.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sim.dir/sim.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/sim.cc.o -MF CMakeFiles/sim.dir/sim.cc.o.d -o CMakeFiles/sim.dir/sim.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/sim.cc
 
 CMakeFiles/sim.dir/sim.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/sim.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/sim.cc > CMakeFiles/sim.dir/sim.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/sim.cc > CMakeFiles/sim.dir/sim.cc.i
 
 CMakeFiles/sim.dir/sim.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/sim.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/sim.cc -o CMakeFiles/sim.dir/sim.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/sim.cc -o CMakeFiles/sim.dir/sim.cc.s
 
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMActionInitialization.cc
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sim.dir/src/PMActionInitialization.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMActionInitialization.cc.o -MF CMakeFiles/sim.dir/src/PMActionInitialization.cc.o.d -o CMakeFiles/sim.dir/src/PMActionInitialization.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMActionInitialization.cc
+CMakeFiles/sim.dir/src/ActionInitialization.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/ActionInitialization.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/ActionInitialization.cc
+CMakeFiles/sim.dir/src/ActionInitialization.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sim.dir/src/ActionInitialization.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/ActionInitialization.cc.o -MF CMakeFiles/sim.dir/src/ActionInitialization.cc.o.d -o CMakeFiles/sim.dir/src/ActionInitialization.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/ActionInitialization.cc
 
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMActionInitialization.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMActionInitialization.cc > CMakeFiles/sim.dir/src/PMActionInitialization.cc.i
+CMakeFiles/sim.dir/src/ActionInitialization.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/ActionInitialization.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/ActionInitialization.cc > CMakeFiles/sim.dir/src/ActionInitialization.cc.i
 
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMActionInitialization.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMActionInitialization.cc -o CMakeFiles/sim.dir/src/PMActionInitialization.cc.s
+CMakeFiles/sim.dir/src/ActionInitialization.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/ActionInitialization.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/ActionInitialization.cc -o CMakeFiles/sim.dir/src/ActionInitialization.cc.s
 
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMDetectorConstruction.cc
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o -MF CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o.d -o CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMDetectorConstruction.cc
+CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/DetectorConstruction.cc
+CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sim.dir/src/DetectorConstruction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/DetectorConstruction.cc.o -MF CMakeFiles/sim.dir/src/DetectorConstruction.cc.o.d -o CMakeFiles/sim.dir/src/DetectorConstruction.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/DetectorConstruction.cc
 
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMDetectorConstruction.cc > CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.i
+CMakeFiles/sim.dir/src/DetectorConstruction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/DetectorConstruction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/DetectorConstruction.cc > CMakeFiles/sim.dir/src/DetectorConstruction.cc.i
 
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMDetectorConstruction.cc -o CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.s
+CMakeFiles/sim.dir/src/DetectorConstruction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/DetectorConstruction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/DetectorConstruction.cc -o CMakeFiles/sim.dir/src/DetectorConstruction.cc.s
 
-CMakeFiles/sim.dir/src/PMEventAction.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMEventAction.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMEventAction.cc
-CMakeFiles/sim.dir/src/PMEventAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sim.dir/src/PMEventAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMEventAction.cc.o -MF CMakeFiles/sim.dir/src/PMEventAction.cc.o.d -o CMakeFiles/sim.dir/src/PMEventAction.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMEventAction.cc
+CMakeFiles/sim.dir/src/EventAction.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/EventAction.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/EventAction.cc
+CMakeFiles/sim.dir/src/EventAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sim.dir/src/EventAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/EventAction.cc.o -MF CMakeFiles/sim.dir/src/EventAction.cc.o.d -o CMakeFiles/sim.dir/src/EventAction.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/EventAction.cc
 
-CMakeFiles/sim.dir/src/PMEventAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMEventAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMEventAction.cc > CMakeFiles/sim.dir/src/PMEventAction.cc.i
+CMakeFiles/sim.dir/src/EventAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/EventAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/EventAction.cc > CMakeFiles/sim.dir/src/EventAction.cc.i
 
-CMakeFiles/sim.dir/src/PMEventAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMEventAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMEventAction.cc -o CMakeFiles/sim.dir/src/PMEventAction.cc.s
+CMakeFiles/sim.dir/src/EventAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/EventAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/EventAction.cc -o CMakeFiles/sim.dir/src/EventAction.cc.s
 
-CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMPrimaryGenerator.cc
-CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o -MF CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o.d -o CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMPrimaryGenerator.cc
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/PrimaryGenerator.cc
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o -MF CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o.d -o CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/PrimaryGenerator.cc
 
-CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMPrimaryGenerator.cc > CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.i
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PrimaryGenerator.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/PrimaryGenerator.cc > CMakeFiles/sim.dir/src/PrimaryGenerator.cc.i
 
-CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMPrimaryGenerator.cc -o CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.s
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PrimaryGenerator.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/PrimaryGenerator.cc -o CMakeFiles/sim.dir/src/PrimaryGenerator.cc.s
 
-CMakeFiles/sim.dir/src/PMRun.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMRun.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRun.cc
-CMakeFiles/sim.dir/src/PMRun.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sim.dir/src/PMRun.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMRun.cc.o -MF CMakeFiles/sim.dir/src/PMRun.cc.o.d -o CMakeFiles/sim.dir/src/PMRun.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRun.cc
+CMakeFiles/sim.dir/src/Run.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/Run.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/Run.cc
+CMakeFiles/sim.dir/src/Run.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sim.dir/src/Run.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/Run.cc.o -MF CMakeFiles/sim.dir/src/Run.cc.o.d -o CMakeFiles/sim.dir/src/Run.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/Run.cc
 
-CMakeFiles/sim.dir/src/PMRun.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMRun.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRun.cc > CMakeFiles/sim.dir/src/PMRun.cc.i
+CMakeFiles/sim.dir/src/Run.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/Run.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/Run.cc > CMakeFiles/sim.dir/src/Run.cc.i
 
-CMakeFiles/sim.dir/src/PMRun.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMRun.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRun.cc -o CMakeFiles/sim.dir/src/PMRun.cc.s
+CMakeFiles/sim.dir/src/Run.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/Run.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/Run.cc -o CMakeFiles/sim.dir/src/Run.cc.s
 
-CMakeFiles/sim.dir/src/PMRunAction.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMRunAction.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRunAction.cc
-CMakeFiles/sim.dir/src/PMRunAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/sim.dir/src/PMRunAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMRunAction.cc.o -MF CMakeFiles/sim.dir/src/PMRunAction.cc.o.d -o CMakeFiles/sim.dir/src/PMRunAction.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRunAction.cc
+CMakeFiles/sim.dir/src/RunAction.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/RunAction.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/RunAction.cc
+CMakeFiles/sim.dir/src/RunAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/sim.dir/src/RunAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/RunAction.cc.o -MF CMakeFiles/sim.dir/src/RunAction.cc.o.d -o CMakeFiles/sim.dir/src/RunAction.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/RunAction.cc
 
-CMakeFiles/sim.dir/src/PMRunAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMRunAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRunAction.cc > CMakeFiles/sim.dir/src/PMRunAction.cc.i
+CMakeFiles/sim.dir/src/RunAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/RunAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/RunAction.cc > CMakeFiles/sim.dir/src/RunAction.cc.i
 
-CMakeFiles/sim.dir/src/PMRunAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMRunAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMRunAction.cc -o CMakeFiles/sim.dir/src/PMRunAction.cc.s
+CMakeFiles/sim.dir/src/RunAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/RunAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/RunAction.cc -o CMakeFiles/sim.dir/src/RunAction.cc.s
 
-CMakeFiles/sim.dir/src/PMSteppingAction.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/PMSteppingAction.cc.o: /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMSteppingAction.cc
-CMakeFiles/sim.dir/src/PMSteppingAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sim.dir/src/PMSteppingAction.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/PMSteppingAction.cc.o -MF CMakeFiles/sim.dir/src/PMSteppingAction.cc.o.d -o CMakeFiles/sim.dir/src/PMSteppingAction.cc.o -c /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMSteppingAction.cc
+CMakeFiles/sim.dir/src/SteppingAction.cc.o: CMakeFiles/sim.dir/flags.make
+CMakeFiles/sim.dir/src/SteppingAction.cc.o: /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/SteppingAction.cc
+CMakeFiles/sim.dir/src/SteppingAction.cc.o: CMakeFiles/sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sim.dir/src/SteppingAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sim.dir/src/SteppingAction.cc.o -MF CMakeFiles/sim.dir/src/SteppingAction.cc.o.d -o CMakeFiles/sim.dir/src/SteppingAction.cc.o -c /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/SteppingAction.cc
 
-CMakeFiles/sim.dir/src/PMSteppingAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/PMSteppingAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMSteppingAction.cc > CMakeFiles/sim.dir/src/PMSteppingAction.cc.i
+CMakeFiles/sim.dir/src/SteppingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/SteppingAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/SteppingAction.cc > CMakeFiles/sim.dir/src/SteppingAction.cc.i
 
-CMakeFiles/sim.dir/src/PMSteppingAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/PMSteppingAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMSteppingAction.cc -o CMakeFiles/sim.dir/src/PMSteppingAction.cc.s
+CMakeFiles/sim.dir/src/SteppingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/SteppingAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/SteppingAction.cc -o CMakeFiles/sim.dir/src/SteppingAction.cc.s
 
 # Object files for target sim
 sim_OBJECTS = \
 "CMakeFiles/sim.dir/sim.cc.o" \
-"CMakeFiles/sim.dir/src/PMActionInitialization.cc.o" \
-"CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o" \
-"CMakeFiles/sim.dir/src/PMEventAction.cc.o" \
-"CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o" \
-"CMakeFiles/sim.dir/src/PMRun.cc.o" \
-"CMakeFiles/sim.dir/src/PMRunAction.cc.o" \
-"CMakeFiles/sim.dir/src/PMSteppingAction.cc.o"
+"CMakeFiles/sim.dir/src/ActionInitialization.cc.o" \
+"CMakeFiles/sim.dir/src/DetectorConstruction.cc.o" \
+"CMakeFiles/sim.dir/src/EventAction.cc.o" \
+"CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o" \
+"CMakeFiles/sim.dir/src/Run.cc.o" \
+"CMakeFiles/sim.dir/src/RunAction.cc.o" \
+"CMakeFiles/sim.dir/src/SteppingAction.cc.o"
 
 # External object files for target sim
 sim_EXTERNAL_OBJECTS =
 
 sim: CMakeFiles/sim.dir/sim.cc.o
-sim: CMakeFiles/sim.dir/src/PMActionInitialization.cc.o
-sim: CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o
-sim: CMakeFiles/sim.dir/src/PMEventAction.cc.o
-sim: CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o
-sim: CMakeFiles/sim.dir/src/PMRun.cc.o
-sim: CMakeFiles/sim.dir/src/PMRunAction.cc.o
-sim: CMakeFiles/sim.dir/src/PMSteppingAction.cc.o
+sim: CMakeFiles/sim.dir/src/ActionInitialization.cc.o
+sim: CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
+sim: CMakeFiles/sim.dir/src/EventAction.cc.o
+sim: CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o
+sim: CMakeFiles/sim.dir/src/Run.cc.o
+sim: CMakeFiles/sim.dir/src/RunAction.cc.o
+sim: CMakeFiles/sim.dir/src/SteppingAction.cc.o
 sim: CMakeFiles/sim.dir/build.make
 sim: /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/lib/libG4Tree.dylib
 sim: /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/lib/libG4FR.dylib
@@ -245,7 +245,7 @@ sim: /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/lib/libG4clhep.
 sim: /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/lib/libG4ptl.3.0.0.dylib
 sim: /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/lib/libG4zlib.dylib
 sim: CMakeFiles/sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable sim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -257,6 +257,6 @@ CMakeFiles/sim.dir/clean:
 .PHONY : CMakeFiles/sim.dir/clean
 
 CMakeFiles/sim.dir/depend:
-	cd /Users/basranlab/Applications/Geant4/Sr90Plate/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/basranlab/Applications/Geant4/Sr90Plate /Users/basranlab/Applications/Geant4/Sr90Plate /Users/basranlab/Applications/Geant4/Sr90Plate/build /Users/basranlab/Applications/Geant4/Sr90Plate/build /Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles/sim.dir/DependInfo.cmake "--color=$(COLOR)" sim
+	cd /Users/basranlab/Applications/Geant4/work/Sr90Plate/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/basranlab/Applications/Geant4/work/Sr90Plate /Users/basranlab/Applications/Geant4/work/Sr90Plate /Users/basranlab/Applications/Geant4/work/Sr90Plate/build /Users/basranlab/Applications/Geant4/work/Sr90Plate/build /Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles/sim.dir/DependInfo.cmake "--color=$(COLOR)" sim
 .PHONY : CMakeFiles/sim.dir/depend
 

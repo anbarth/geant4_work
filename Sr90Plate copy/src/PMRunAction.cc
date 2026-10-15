@@ -61,7 +61,9 @@ void PMRunAction::EndOfRunAction(const G4Run* run)
             // relative error on the sum: sqrt(sum2 - sum^2/N) / sum
             G4double rel = 0.;
             if (sum[i] > 0.) {
+                // var = standard error of the TOTAL energy deposited
                 const G4double var = std::max(0., sum2[i] - sum[i] * sum[i] / nEvents);
+                // rel = fractional error on sum(energy), which should be the same as fractional error on other quantities
                 rel = std::sqrt(var) / sum[i];
             }
 

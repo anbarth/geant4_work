@@ -1,9 +1,7 @@
-CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMActionInitialization.cc \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMActionInitialization.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserActionInitialization.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMDetectorConstruction.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh \
+CMakeFiles/sim.dir/src/EventAction.cc.o: \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/EventAction.cc \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/EventAction.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserEventAction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/globals.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ios.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Types.hh \
@@ -834,20 +832,16 @@ CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/map.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/set.h \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/Run.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Run.hh \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/DetectorConstruction.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ThreeVector.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Utility/defs.h \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SystemOfUnits.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMPrimaryGenerator.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMRunAction.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserRunAction.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMEventAction.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserEventAction.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMSteppingAction.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserSteppingAction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RunManager.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Event.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
@@ -1096,6 +1090,7 @@ CMakeFiles/sim.dir/src/PMActionInitialization.cc.o: \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessVector.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessVector.icc \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessManager.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserSteppingAction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSteppingVerbose.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/trkgdefs.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackingMessenger.hh \

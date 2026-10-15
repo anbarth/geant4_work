@@ -1,5 +1,5 @@
-#ifndef PMDetectorConstruction_hh
-#define PMDetectorConstruction_hh
+#ifndef DetectorConstruction_hh
+#define DetectorConstruction_hh
 
 #include "G4VUserDetectorConstruction.hh"
 #include "G4ThreeVector.hh"
@@ -13,11 +13,11 @@ class G4VPhysicalVolume;
 //
 // Well copy numbers (of the "air well" volume) run 0..47 as  index = row*8 + col
 //   row 0 = A (top, +y) ... row 5 = F;   col 0 = 1 (left, -x) ... col 7 = 8
-class PMDetectorConstruction : public G4VUserDetectorConstruction
+class DetectorConstruction : public G4VUserDetectorConstruction
 {
 public:
-    PMDetectorConstruction();
-    ~PMDetectorConstruction() override = default;
+    DetectorConstruction();
+    ~DetectorConstruction() override = default;
 
     G4VPhysicalVolume* Construct() override;
 

@@ -1,6 +1,8 @@
-CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/src/PMDetectorConstruction.cc \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMDetectorConstruction.hh \
+CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o: \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/src/PrimaryGenerator.cc \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/PrimaryGenerator.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/DetectorConstruction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/globals.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ios.hh \
@@ -838,8 +840,118 @@ CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SystemOfUnits.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NistManager.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ICRU90StoppingData.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleGun.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPrimaryGenerator.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleDefinition.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PDefManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AutoLock.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Threading.hh \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/condition_variable \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_callback.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_shared_ptr.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_state.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/atomic_unique_lock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_list_view.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_token.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/future \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/thread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/thread \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/this_thread.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/pwdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleDefinition.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PrimaryVertex.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Allocator.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AllocatorPool.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PrimaryParticle.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleMomentum.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4IonTable.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Ions.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleTable.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleTableIterator.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleTable.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Event.hh \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/evtdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4HCofThisEvent.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VHitsCollection.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4DCofThisEvent.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VDigiCollection.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrajectoryContainer.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VTrajectory.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserEventInformation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RunManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4EventManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4StackManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserStackingAction.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ClassificationOfNewTrack.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4StackedTrack.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackStack.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartTrackStack.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubEventTrackStack.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubEvent.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Track.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/trkdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4GeomSplitter.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/geomwdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/geomdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RotationMatrix.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/Rotation.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationX.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationX.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationY.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationY.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationZ.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/Rotation.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4DynamicParticle.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElectronOccupancy.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Log.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4IEEE754.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4LorentzVector.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4DynamicParticle.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackStatus.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TouchableHandle.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VTouchable.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TouchableHistory.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationHistory.hh \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Transform3D.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationLevel.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationLevelRep.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationLevelRep.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationLevel.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationHistoryPool.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationHistory.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TouchableHistory.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ReferenceCountedHandle.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserTrackInformation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PhysicsModelCatalog.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Material.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Element.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElementTable.hh \
@@ -863,7 +975,6 @@ CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/file_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
@@ -873,8 +984,6 @@ CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Log.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4IEEE754.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PhysicsVectorType.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PhysicsVector.icc \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4MaterialTable.hh \
@@ -882,81 +991,118 @@ CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o: \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4OrderedTable.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NistElementBuilder.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NistMaterialBuilder.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Pow.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Exp.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4GeomTypes.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4GeomConfig.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4CSGSolid.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Track.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Step.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4StepPoint.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SteppingControl.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4StepStatus.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4StepPoint.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackVector.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Step.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PrimaryTransformer.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackingManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SteppingManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Navigator.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NormalNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VNavigation.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSolid.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/geomdefs.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSolid.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Polyhedron.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/HepPolyhedron.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TwoVector.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Point3D.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Point3D.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Normal3D.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Transform3D.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/Rotation.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationX.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationX.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationY.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationY.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationZ.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/Rotation.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Visible.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Visible.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4GeomSplitter.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AutoLock.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Threading.hh \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/condition_variable \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_callback.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_shared_ptr.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_state.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/atomic_unique_lock.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/intrusive_list_view.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__stop_token/stop_token.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/future \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/thread.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/thread \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/this_thread.h \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/geomwdefs.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RotationMatrix.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.icc \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PVPlacement.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VisAttributes.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/graphics_reps_defs.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Colour.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Color.hh \
-  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VisAttributes.icc
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AuxiliaryNavServices.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4AuxiliaryNavServices.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NormalNavigation.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VoxelNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NavigationLogger.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4BlockingList.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4BlockingList.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelProxy.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelProxy.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelNode.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelNode.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelHeader.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SmartVoxelHeader.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VoxelNavigation.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParameterisedNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPVParameterisation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VVolumeMaterialScanner.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParameterisedNavigation.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ReplicaNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ReplicaNavigation.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RegularNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VExternalNavigation.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Navigator.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4NoProcess.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VProcess.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/Randomize.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/Randomize.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/DualRand.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandomEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandomEngine.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/JamesRandom.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/MixMaxRng.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RanecuEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RanluxEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/Ranlux64Engine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RanluxppEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RanshiEngine.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBinomial.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/Random.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/Random.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Utility/memory.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBinomial.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBreitWigner.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandFlat.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Utility/thread_local.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandFlat.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBreitWigner.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandChiSquare.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandChiSquare.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandExponential.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandExponential.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandExpZiggurat.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBit.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandBit.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGamma.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGamma.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGauss.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGauss.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGaussQ.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGaussQ.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGaussZiggurat.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGeneral.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandGeneral.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandLandau.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandLandau.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandPoissonQ.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandPoisson.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandStudentT.h \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PhysicsTable.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4PhysicsTable.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VParticleChange.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VParticleChange.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ForceCondition.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4GPILSelection.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleChange.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ParticleChange.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessType.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessManager.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessVector.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessVector.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ProcessManager.icc \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserSteppingAction.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSteppingVerbose.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/trkgdefs.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4TrackingMessenger.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UImessenger.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UIdirectory.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UIcommand.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4ApplicationState.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UIparameter.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4UserTrackingAction.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RunManagerKernel.hh \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/rundefs.hh \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
+  /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Alpha.hh

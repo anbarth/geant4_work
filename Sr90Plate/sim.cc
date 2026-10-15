@@ -13,8 +13,8 @@
 #include "G4HadronicParameters.hh"
 #endif
 
-#include "PMDetectorConstruction.hh"
-#include "PMActionInitialization.hh"
+#include "DetectorConstruction.hh"
+#include "ActionInitialization.hh"
 
 int main(int argc, char** argv)
 {
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 
     auto* runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
 
-    runManager->SetUserInitialization(new PMDetectorConstruction());
+    runManager->SetUserInitialization(new DetectorConstruction());
 
     // Physics: precise EM (needed for low-energy betas in thin layers),
     // particle decays, and radioactive decay (Sr90 -> Y90 -> Zr90)
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     physics->SetDefaultCutValue(0.01 * mm);
     runManager->SetUserInitialization(physics);
 
-    runManager->SetUserInitialization(new PMActionInitialization());
+    runManager->SetUserInitialization(new ActionInitialization());
 
     auto* visManager = new G4VisExecutive();
     visManager->Initialize();

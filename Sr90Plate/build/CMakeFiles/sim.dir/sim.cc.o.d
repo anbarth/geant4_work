@@ -1,5 +1,5 @@
 CMakeFiles/sim.dir/sim.cc.o: \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/sim.cc \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/sim.cc \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4RunManagerFactory.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4MTRunManager.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4MTBarrier.hh \
@@ -1271,7 +1271,7 @@ CMakeFiles/sim.dir/sim.cc.o: \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4SystemOfUnits.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4Version.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4HadronicParameters.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMDetectorConstruction.hh \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/DetectorConstruction.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserDetectorConstruction.hh \
-  /Users/basranlab/Applications/Geant4/Sr90Plate/include/PMActionInitialization.hh \
+  /Users/basranlab/Applications/Geant4/work/Sr90Plate/include/ActionInitialization.hh \
   /Users/basranlab/Applications/Geant4/geant4-v11.4.3-install/include/Geant4/G4VUserActionInitialization.hh

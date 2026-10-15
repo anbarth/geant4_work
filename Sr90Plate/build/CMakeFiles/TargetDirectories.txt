@@ -1,3 +1,3 @@
-/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles/sim.dir
-/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles/edit_cache.dir
-/Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles/rebuild_cache.dir
+/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles/sim.dir
+/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles/edit_cache.dir
+/Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles/rebuild_cache.dir

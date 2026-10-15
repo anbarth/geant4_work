@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/basranlab/Applications/Geant4/Sr90Plate
+CMAKE_SOURCE_DIR = /Users/basranlab/Applications/Geant4/work/Sr90Plate
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/basranlab/Applications/Geant4/Sr90Plate/build
+CMAKE_BINARY_DIR = /Users/basranlab/Applications/Geant4/work/Sr90Plate/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles /Users/basranlab/Applications/Geant4/Sr90Plate/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles /Users/basranlab/Applications/Geant4/work/Sr90Plate/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/basranlab/Applications/Geant4/Sr90Plate/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/basranlab/Applications/Geant4/work/Sr90Plate/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,173 +153,173 @@ sim.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/sim.cc.s
 .PHONY : sim.cc.s
 
-src/PMActionInitialization.o: src/PMActionInitialization.cc.o
-.PHONY : src/PMActionInitialization.o
+src/ActionInitialization.o: src/ActionInitialization.cc.o
+.PHONY : src/ActionInitialization.o
 
 # target to build an object file
-src/PMActionInitialization.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMActionInitialization.cc.o
-.PHONY : src/PMActionInitialization.cc.o
+src/ActionInitialization.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/ActionInitialization.cc.o
+.PHONY : src/ActionInitialization.cc.o
 
-src/PMActionInitialization.i: src/PMActionInitialization.cc.i
-.PHONY : src/PMActionInitialization.i
+src/ActionInitialization.i: src/ActionInitialization.cc.i
+.PHONY : src/ActionInitialization.i
 
 # target to preprocess a source file
-src/PMActionInitialization.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMActionInitialization.cc.i
-.PHONY : src/PMActionInitialization.cc.i
+src/ActionInitialization.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/ActionInitialization.cc.i
+.PHONY : src/ActionInitialization.cc.i
 
-src/PMActionInitialization.s: src/PMActionInitialization.cc.s
-.PHONY : src/PMActionInitialization.s
+src/ActionInitialization.s: src/ActionInitialization.cc.s
+.PHONY : src/ActionInitialization.s
 
 # target to generate assembly for a file
-src/PMActionInitialization.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMActionInitialization.cc.s
-.PHONY : src/PMActionInitialization.cc.s
+src/ActionInitialization.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/ActionInitialization.cc.s
+.PHONY : src/ActionInitialization.cc.s
 
-src/PMDetectorConstruction.o: src/PMDetectorConstruction.cc.o
-.PHONY : src/PMDetectorConstruction.o
+src/DetectorConstruction.o: src/DetectorConstruction.cc.o
+.PHONY : src/DetectorConstruction.o
 
 # target to build an object file
-src/PMDetectorConstruction.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.o
-.PHONY : src/PMDetectorConstruction.cc.o
+src/DetectorConstruction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
+.PHONY : src/DetectorConstruction.cc.o
 
-src/PMDetectorConstruction.i: src/PMDetectorConstruction.cc.i
-.PHONY : src/PMDetectorConstruction.i
+src/DetectorConstruction.i: src/DetectorConstruction.cc.i
+.PHONY : src/DetectorConstruction.i
 
 # target to preprocess a source file
-src/PMDetectorConstruction.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.i
-.PHONY : src/PMDetectorConstruction.cc.i
+src/DetectorConstruction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/DetectorConstruction.cc.i
+.PHONY : src/DetectorConstruction.cc.i
 
-src/PMDetectorConstruction.s: src/PMDetectorConstruction.cc.s
-.PHONY : src/PMDetectorConstruction.s
+src/DetectorConstruction.s: src/DetectorConstruction.cc.s
+.PHONY : src/DetectorConstruction.s
 
 # target to generate assembly for a file
-src/PMDetectorConstruction.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMDetectorConstruction.cc.s
-.PHONY : src/PMDetectorConstruction.cc.s
+src/DetectorConstruction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/DetectorConstruction.cc.s
+.PHONY : src/DetectorConstruction.cc.s
 
-src/PMEventAction.o: src/PMEventAction.cc.o
-.PHONY : src/PMEventAction.o
+src/EventAction.o: src/EventAction.cc.o
+.PHONY : src/EventAction.o
 
 # target to build an object file
-src/PMEventAction.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMEventAction.cc.o
-.PHONY : src/PMEventAction.cc.o
+src/EventAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/EventAction.cc.o
+.PHONY : src/EventAction.cc.o
 
-src/PMEventAction.i: src/PMEventAction.cc.i
-.PHONY : src/PMEventAction.i
+src/EventAction.i: src/EventAction.cc.i
+.PHONY : src/EventAction.i
 
 # target to preprocess a source file
-src/PMEventAction.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMEventAction.cc.i
-.PHONY : src/PMEventAction.cc.i
+src/EventAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/EventAction.cc.i
+.PHONY : src/EventAction.cc.i
 
-src/PMEventAction.s: src/PMEventAction.cc.s
-.PHONY : src/PMEventAction.s
+src/EventAction.s: src/EventAction.cc.s
+.PHONY : src/EventAction.s
 
 # target to generate assembly for a file
-src/PMEventAction.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMEventAction.cc.s
-.PHONY : src/PMEventAction.cc.s
+src/EventAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/EventAction.cc.s
+.PHONY : src/EventAction.cc.s
 
-src/PMPrimaryGenerator.o: src/PMPrimaryGenerator.cc.o
-.PHONY : src/PMPrimaryGenerator.o
+src/PrimaryGenerator.o: src/PrimaryGenerator.cc.o
+.PHONY : src/PrimaryGenerator.o
 
 # target to build an object file
-src/PMPrimaryGenerator.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.o
-.PHONY : src/PMPrimaryGenerator.cc.o
+src/PrimaryGenerator.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PrimaryGenerator.cc.o
+.PHONY : src/PrimaryGenerator.cc.o
 
-src/PMPrimaryGenerator.i: src/PMPrimaryGenerator.cc.i
-.PHONY : src/PMPrimaryGenerator.i
+src/PrimaryGenerator.i: src/PrimaryGenerator.cc.i
+.PHONY : src/PrimaryGenerator.i
 
 # target to preprocess a source file
-src/PMPrimaryGenerator.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.i
-.PHONY : src/PMPrimaryGenerator.cc.i
+src/PrimaryGenerator.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PrimaryGenerator.cc.i
+.PHONY : src/PrimaryGenerator.cc.i
 
-src/PMPrimaryGenerator.s: src/PMPrimaryGenerator.cc.s
-.PHONY : src/PMPrimaryGenerator.s
+src/PrimaryGenerator.s: src/PrimaryGenerator.cc.s
+.PHONY : src/PrimaryGenerator.s
 
 # target to generate assembly for a file
-src/PMPrimaryGenerator.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMPrimaryGenerator.cc.s
-.PHONY : src/PMPrimaryGenerator.cc.s
+src/PrimaryGenerator.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PrimaryGenerator.cc.s
+.PHONY : src/PrimaryGenerator.cc.s
 
-src/PMRun.o: src/PMRun.cc.o
-.PHONY : src/PMRun.o
+src/Run.o: src/Run.cc.o
+.PHONY : src/Run.o
 
 # target to build an object file
-src/PMRun.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRun.cc.o
-.PHONY : src/PMRun.cc.o
+src/Run.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/Run.cc.o
+.PHONY : src/Run.cc.o
 
-src/PMRun.i: src/PMRun.cc.i
-.PHONY : src/PMRun.i
+src/Run.i: src/Run.cc.i
+.PHONY : src/Run.i
 
 # target to preprocess a source file
-src/PMRun.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRun.cc.i
-.PHONY : src/PMRun.cc.i
+src/Run.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/Run.cc.i
+.PHONY : src/Run.cc.i
 
-src/PMRun.s: src/PMRun.cc.s
-.PHONY : src/PMRun.s
+src/Run.s: src/Run.cc.s
+.PHONY : src/Run.s
 
 # target to generate assembly for a file
-src/PMRun.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRun.cc.s
-.PHONY : src/PMRun.cc.s
+src/Run.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/Run.cc.s
+.PHONY : src/Run.cc.s
 
-src/PMRunAction.o: src/PMRunAction.cc.o
-.PHONY : src/PMRunAction.o
+src/RunAction.o: src/RunAction.cc.o
+.PHONY : src/RunAction.o
 
 # target to build an object file
-src/PMRunAction.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRunAction.cc.o
-.PHONY : src/PMRunAction.cc.o
+src/RunAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/RunAction.cc.o
+.PHONY : src/RunAction.cc.o
 
-src/PMRunAction.i: src/PMRunAction.cc.i
-.PHONY : src/PMRunAction.i
+src/RunAction.i: src/RunAction.cc.i
+.PHONY : src/RunAction.i
 
 # target to preprocess a source file
-src/PMRunAction.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRunAction.cc.i
-.PHONY : src/PMRunAction.cc.i
+src/RunAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/RunAction.cc.i
+.PHONY : src/RunAction.cc.i
 
-src/PMRunAction.s: src/PMRunAction.cc.s
-.PHONY : src/PMRunAction.s
+src/RunAction.s: src/RunAction.cc.s
+.PHONY : src/RunAction.s
 
 # target to generate assembly for a file
-src/PMRunAction.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMRunAction.cc.s
-.PHONY : src/PMRunAction.cc.s
+src/RunAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/RunAction.cc.s
+.PHONY : src/RunAction.cc.s
 
-src/PMSteppingAction.o: src/PMSteppingAction.cc.o
-.PHONY : src/PMSteppingAction.o
+src/SteppingAction.o: src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.o
 
 # target to build an object file
-src/PMSteppingAction.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMSteppingAction.cc.o
-.PHONY : src/PMSteppingAction.cc.o
+src/SteppingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.cc.o
 
-src/PMSteppingAction.i: src/PMSteppingAction.cc.i
-.PHONY : src/PMSteppingAction.i
+src/SteppingAction.i: src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.i
 
 # target to preprocess a source file
-src/PMSteppingAction.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMSteppingAction.cc.i
-.PHONY : src/PMSteppingAction.cc.i
+src/SteppingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.cc.i
 
-src/PMSteppingAction.s: src/PMSteppingAction.cc.s
-.PHONY : src/PMSteppingAction.s
+src/SteppingAction.s: src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.s
 
 # target to generate assembly for a file
-src/PMSteppingAction.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/PMSteppingAction.cc.s
-.PHONY : src/PMSteppingAction.cc.s
+src/SteppingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.cc.s
 
 # Help Target
 help:
@@ -333,27 +333,27 @@ help:
 	@echo "... sim.o"
 	@echo "... sim.i"
 	@echo "... sim.s"
-	@echo "... src/PMActionInitialization.o"
-	@echo "... src/PMActionInitialization.i"
-	@echo "... src/PMActionInitialization.s"
-	@echo "... src/PMDetectorConstruction.o"
-	@echo "... src/PMDetectorConstruction.i"
-	@echo "... src/PMDetectorConstruction.s"
-	@echo "... src/PMEventAction.o"
-	@echo "... src/PMEventAction.i"
-	@echo "... src/PMEventAction.s"
-	@echo "... src/PMPrimaryGenerator.o"
-	@echo "... src/PMPrimaryGenerator.i"
-	@echo "... src/PMPrimaryGenerator.s"
-	@echo "... src/PMRun.o"
-	@echo "... src/PMRun.i"
-	@echo "... src/PMRun.s"
-	@echo "... src/PMRunAction.o"
-	@echo "... src/PMRunAction.i"
-	@echo "... src/PMRunAction.s"
-	@echo "... src/PMSteppingAction.o"
-	@echo "... src/PMSteppingAction.i"
-	@echo "... src/PMSteppingAction.s"
+	@echo "... src/ActionInitialization.o"
+	@echo "... src/ActionInitialization.i"
+	@echo "... src/ActionInitialization.s"
+	@echo "... src/DetectorConstruction.o"
+	@echo "... src/DetectorConstruction.i"
+	@echo "... src/DetectorConstruction.s"
+	@echo "... src/EventAction.o"
+	@echo "... src/EventAction.i"
+	@echo "... src/EventAction.s"
+	@echo "... src/PrimaryGenerator.o"
+	@echo "... src/PrimaryGenerator.i"
+	@echo "... src/PrimaryGenerator.s"
+	@echo "... src/Run.o"
+	@echo "... src/Run.i"
+	@echo "... src/Run.s"
+	@echo "... src/RunAction.o"
+	@echo "... src/RunAction.i"
+	@echo "... src/RunAction.s"
+	@echo "... src/SteppingAction.o"
+	@echo "... src/SteppingAction.i"
+	@echo "... src/SteppingAction.s"
 .PHONY : help
 
 
