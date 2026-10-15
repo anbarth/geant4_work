@@ -42,7 +42,7 @@ private:
     G4double fFloor = 1.0 * mm;         // well floor thickness
     G4double fWellDiameter = 11.0 * mm;
     G4double fWellPitch = 13.0 * mm;
-    G4double fFillHeight = 10.0 * mm;    // liquid depth (~0.5 mL)
+    G4double fFillHeight = 2.0 * mm;    // liquid depth 
 
     // Source applicator
     G4double fSourceRadius = 5.0 * mm;       // active disc radius
