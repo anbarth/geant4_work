@@ -26,6 +26,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     G4Material* polystyrene = nist->FindOrBuildMaterial("G4_POLYSTYRENE");
     G4Material* medium = nist->FindOrBuildMaterial("G4_WATER");   // culture medium ~ water
     G4Material* steel = nist->FindOrBuildMaterial("G4_STAINLESS-STEEL");
+    G4Material* silver = nist->FindOrBuildMaterial("G4_Ag");
 
     // Active layer: strontium titanate (SrTiO3), a common Sr-90 carrier
     G4Element* elSr = nist->FindOrBuildElement("Sr");
@@ -35,6 +36,9 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     srtio3->AddElement(elSr, 1);
     srtio3->AddElement(elTi, 1);
     srtio3->AddElement(elO, 3);
+
+    // Alternative active layer: pure Sr
+    G4Material* strontium = nist->FindOrBuildMaterial("G4_Sr");
 
     // ---------- World ----------
     G4double worldX = 100. * mm, worldY = 100. * mm, worldZ = 60. * mm;  // half-lengths
@@ -84,7 +88,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     // ---------- Sr-90 applicator above the plate, window facing down ----------
     auto* solidHousing = new G4Tubs("Housing", 0., fHousingRadius, fHousingHeight / 2, 0., 360. * deg);
     //auto* logicHousing = new G4LogicalVolume(solidHousing, steel, "Housing");
-    auto* logicHousing = new G4LogicalVolume(solidHousing, air, "Housing");
+    auto* logicHousing = new G4LogicalVolume(solidHousing, silver, "Housing");
     G4VisAttributes housingVis(G4Colour(0.6, 0.6, 0.6, 0.5));
     //housingVis.SetForceWireframe(true);
     logicHousing->SetVisAttributes(housingVis);
@@ -94,7 +98,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
                       "Housing", logicWorld, false, 0, true);
 
     auto* solidSource = new G4Tubs("Source", 0., fSourceRadius, fSourceThickness / 2, 0., 360. * deg);
-    auto* logicSource = new G4LogicalVolume(solidSource, srtio3, "Source");
+    //auto* logicSource = new G4LogicalVolume(solidSource, srtio3, "Source");
+    auto* logicSource = new G4LogicalVolume(solidSource, strontium, "Source");
     logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1.0, 0.8, 0.0)));
 
     // Active disc embedded in the steel, `fWindow` above the bottom face of the housing

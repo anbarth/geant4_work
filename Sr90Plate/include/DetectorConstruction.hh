@@ -45,14 +45,14 @@ private:
     G4double fFillHeight = 2.0 * mm;    // liquid depth 
 
     // Source applicator
-    G4double fSourceRadius = 5.0 * mm;       // active disc radius
-    G4double fSourceThickness = 0.1 * mm;    // active disc thickness
-    G4double fHousingRadius = 12.5 * mm;
-    G4double fHousingHeight = 8.0 * mm;
-    G4double fWindow = 0.1 * mm;             // steel between active disc and outside
+    G4double fSourceRadius = 8.2 * mm;       // active disc radius
+    G4double fSourceThickness = 1.2 * um;    // active disc thickness
+    G4double fHousingRadius = 8.2 * mm;
+    G4double fHousingHeight = 101.2 * um;
+    G4double fWindow = 50.0 * um;             // thickness of housing between active disc and outside
     G4double fGap = 30.0 * mm;               // source window to top of plate
-    G4double fSourceX = 0.0 * mm;            // lateral offset of source
-    G4double fSourceY = 0.0 * mm;
+    G4double fSourceX = fWellPitch/2;            // lateral offset of source
+    G4double fSourceY = fWellPitch/2;
     // ----------------------------------------
 
     G4LogicalVolume* fLiquidLV = nullptr;
