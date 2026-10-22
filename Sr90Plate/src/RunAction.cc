@@ -30,7 +30,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
     const auto& sum = myRun->GetSum();
     const auto& sum2 = myRun->GetSum2();
 
-    const G4double mass = fDetector->GetLiquidMass();   // mass of liquid in ONE well
+    const G4double mass = fDetector->GetScoredMass();   // mass of the scored region in ONE well
     const char rowName[] = "ABCDEF";
 
     std::ofstream csv("well_dose.csv");
@@ -39,7 +39,14 @@ void RunAction::EndOfRunAction(const G4Run* run)
 
     G4cout << "\n--------------------- 48-well plate dose summary ---------------------\n"
            << " Sr-90 decays simulated : " << nEvents << "\n"
-           << " Liquid mass per well   : " << G4BestUnit(mass, "Mass") << "\n"
+           << " Scored region         : ";
+    if (fDetector->ScoreCellLayerOnly())
+        G4cout << "cell layer only (" << G4BestUnit(fDetector->GetCellLayerThickness(), "Length")
+               << " at the well bottom)";
+    else
+        G4cout << "whole liquid column";
+    G4cout << "\n"
+           << " Scored mass per well   : " << G4BestUnit(mass, "Mass") << "\n"
            << " Dose rate column assumes " << kActivity_Bq << " Bq of Sr-90 "
            << "(Y-90 in equilibrium)\n\n"
            << " Dose rate [mGy/h] at that activity (rows A-F, columns 1-8):\n\n      ";

@@ -3273,7 +3273,11 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/ThreeVector.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.h
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.icc
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.hh
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AutoLock.hh
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.hh
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4CSGSolid.hh
@@ -3282,6 +3286,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DensityEffectCalculator.hh
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DisplacedSolid.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Element.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElementTable.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElementVector.hh
@@ -3326,6 +3331,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SandiaTable.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4String.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4String.icc
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubtractionSolid.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SystemOfUnits.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Threading.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ThreeVector.hh
@@ -3334,6 +3340,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4TwoVector.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Types.hh
+ /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VBooleanProcessor.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.hh
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.icc
  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSolid.hh

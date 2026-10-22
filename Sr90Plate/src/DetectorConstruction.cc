@@ -5,6 +5,8 @@
 #include "G4Element.hh"
 #include "G4Box.hh"
 #include "G4Tubs.hh"
+#include "G4SubtractionSolid.hh"
+#include "G4Exception.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4VisAttributes.hh"
@@ -12,9 +14,11 @@
 
 DetectorConstruction::DetectorConstruction() {}
 
-G4double DetectorConstruction::GetLiquidMass() const
+G4double DetectorConstruction::GetScoredMass() const
 {
-    return fLiquidLV ? fLiquidLV->GetMass() : 0.;
+    if (!fCellLayerLV || !fLiquidLV) return 0.;
+    const G4double layerMass = fCellLayerLV->GetMass();
+    return fScoreCellLayerOnly ? layerMass : layerMass + fLiquidLV->GetMass();
 }
 
 G4VPhysicalVolume* DetectorConstruction::Construct()
@@ -65,12 +69,29 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     wellVis.SetForceWireframe(true);
     logicWell->SetVisAttributes(wellVis);
 
-    auto* solidLiquid = new G4Tubs("Liquid", 0., fWellDiameter / 2, fFillHeight / 2, 0., 360. * deg);
+    if (fCellLayerThickness <= 0. || fCellLayerThickness >= fFillHeight) {
+        G4Exception("DetectorConstruction::Construct", "Cell001", FatalException,
+                    "fCellLayerThickness must be > 0 and smaller than fFillHeight.");
+    }
+
+    // The liquid is split in two stacked cylinders of the same material: a thin cell layer
+    // on the floor of the well, and the rest of the liquid above it. Splitting does not
+    // change the physics; it only lets us score the layer on its own.
+    const G4double liquidHeight = fFillHeight - fCellLayerThickness;
+
+    auto* solidCell = new G4Tubs("CellLayer", 0., fWellDiameter / 2, fCellLayerThickness / 2, 0., 360. * deg);
+    fCellLayerLV = new G4LogicalVolume(solidCell, medium, "CellLayer");
+    fCellLayerLV->SetVisAttributes(G4VisAttributes(G4Colour(0.2, 0.8, 0.3, 1.0)));
+
+    auto* solidLiquid = new G4Tubs("Liquid", 0., fWellDiameter / 2, liquidHeight / 2, 0., 360. * deg);
     fLiquidLV = new G4LogicalVolume(solidLiquid, medium, "Liquid");
     fLiquidLV->SetVisAttributes(G4VisAttributes(G4Colour(1.0, 0.3, 0.3, 1.0)));
 
-    // Liquid sits on the floor of the well cavity (local z of the well cavity)
-    new G4PVPlacement(nullptr, G4ThreeVector(0, 0, -wellDepth / 2 + fFillHeight / 2),
+    // Cell layer sits on the floor of the well cavity (local z of the well cavity),
+    // with the rest of the liquid stacked on top of it
+    new G4PVPlacement(nullptr, G4ThreeVector(0, 0, -wellDepth / 2 + fCellLayerThickness / 2),
+                      fCellLayerLV, "CellLayer", logicWell, false, 0, true);
+    new G4PVPlacement(nullptr, G4ThreeVector(0, 0, -wellDepth / 2 + fCellLayerThickness + liquidHeight / 2),
                       fLiquidLV, "Liquid", logicWell, false, 0, true);
 
     // ---------- Place the 48 wells ----------
@@ -83,6 +104,38 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
             new G4PVPlacement(nullptr, G4ThreeVector(x, y, zWell), logicWell, "Well",
                               logicPlate, false, index, true);
         }
+    }
+
+    // ---------- Lid: flat top above the plate, with a skirt around the outside ----------
+    // One solid: a box (top + skirt) with a rectangular cavity cut out from below.
+    // The air between lid and plate is just the world material.
+    if (fHasLid) {
+        if (fGap < fLidAirGap + fLidThickness) {
+            G4Exception("DetectorConstruction::Construct", "Lid001", FatalException,
+                        "fGap is smaller than the height of the lid top above the plate: "
+                        "the source housing would overlap the lid.");
+        }
+
+        const G4double eps = 1.0 * mm;   // cavity sticks out below the skirt: no coincident faces
+        const G4double innerX = fPlateX + 2 * fLidClearance;
+        const G4double innerY = fPlateY + 2 * fLidClearance;
+        const G4double outerX = innerX + 2 * fLidWall;
+        const G4double outerY = innerY + 2 * fLidWall;
+        const G4double lidHeight = fLidThickness + fLidSkirtHeight;
+
+        auto* solidLidOuter = new G4Box("LidOuter", outerX / 2, outerY / 2, lidHeight / 2);
+        auto* solidLidCavity = new G4Box("LidCavity", innerX / 2, innerY / 2,
+                                         (fLidSkirtHeight + eps) / 2);
+        // Cavity top is flush with the underside of the flat top (lid-local z = (skirt - thickness)/2)
+        auto* solidLid = new G4SubtractionSolid("Lid", solidLidOuter, solidLidCavity, nullptr,
+                                                G4ThreeVector(0, 0, -(fLidThickness + eps) / 2));
+        auto* logicLid = new G4LogicalVolume(solidLid, polystyrene, "Lid");
+        G4VisAttributes lidVis(G4Colour(0.7, 0.85, 1.0, 0.25));
+        logicLid->SetVisAttributes(lidVis);
+
+        // Underside of the flat top sits fLidAirGap above the top of the plate
+        G4double zLid = fPlateZ / 2 + fLidAirGap - (fLidSkirtHeight - fLidThickness) / 2;
+        new G4PVPlacement(nullptr, G4ThreeVector(0, 0, zLid), logicLid, "Lid", logicWorld, false, 0, true);
     }
 
     // ---------- Sr-90 applicator above the plate, window facing down ----------

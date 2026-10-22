@@ -3270,7 +3270,11 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: /Users/ab2444/Geant4/geant4_wo
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.h \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/CLHEP/Vector/TwoVector.icc \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AutoLock.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4CSGSolid.hh \
@@ -3279,6 +3283,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: /Users/ab2444/Geant4/geant4_wo
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DataVector.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DensityEffectCalculator.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DisplacedSolid.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Element.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElementTable.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ElementVector.hh \
@@ -3323,6 +3328,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: /Users/ab2444/Geant4/geant4_wo
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SandiaTable.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4String.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4String.icc \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubtractionSolid.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SystemOfUnits.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Threading.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ThreeVector.hh \
@@ -3331,6 +3337,7 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: /Users/ab2444/Geant4/geant4_wo
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4TwoVector.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Types.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VBooleanProcessor.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VSolid.hh \
@@ -8247,11 +8254,17 @@ CMakeFiles/sim.dir/src/SteppingAction.cc.o: /Users/ab2444/Geant4/geant4_work/Sr9
 
 /Users/ab2444/Geant4/geant4_work/Sr90Plate/src/PrimaryGenerator.cc:
 
+/Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubtractionSolid.hh:
+
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Pow.hh:
 
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4PVPlacement.hh:
 
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4NistElementBuilder.hh:
+
+/Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DisplacedSolid.hh:
+
+/Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.hh:
 
 /Users/ab2444/Geant4/geant4_work/Sr90Plate/src/DetectorConstruction.cc:
 
@@ -8660,6 +8673,8 @@ CMakeFiles/sim.dir/src/SteppingAction.cc.o: /Users/ab2444/Geant4/geant4_work/Sr9
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Color.hh:
 
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4ClassificationOfNewTrack.hh:
+
+/Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VBooleanProcessor.hh:
 
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Cache.hh:
 
@@ -9218,6 +9233,8 @@ CMakeFiles/sim.dir/src/SteppingAction.cc.o: /Users/ab2444/Geant4/geant4_work/Sr9
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_list.h:
+
+/Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.icc:
 
 /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/PTL/TaskGroup.hh:
 

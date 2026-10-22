@@ -17,9 +17,9 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     if (edep <= 0.) return;
 
     const G4TouchableHandle touch = step->GetPreStepPoint()->GetTouchableHandle();
-    if (touch->GetVolume()->GetLogicalVolume() != fDetector->GetLiquidLV()) return;
+    if (!fDetector->IsScoringVolume(touch->GetVolume()->GetLogicalVolume())) return;
 
-    // Depth 0 = liquid (copy no. 0); depth 1 = the well it sits in (copy no. = well index)
+    // Depth 0 = cell layer or liquid (copy no. 0); depth 1 = the well it sits in (copy no. = well index)
     const G4int well = touch->GetCopyNumber(1);
     fEventAction->AddEdep(well, edep);
 }

@@ -930,6 +930,14 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Box.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Tubs.icc \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4SubtractionSolid.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4DisplacedSolid.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4RotationMatrix.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4AffineTransform.icc \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VBooleanProcessor.hh \
+  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4BooleanSolid.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4GeomSplitter.hh \
@@ -951,7 +959,6 @@ CMakeFiles/sim.dir/src/DetectorConstruction.cc.o: \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/geomwdefs.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4Region.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.hh \
-  /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4RotationMatrix.hh \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4VPhysicalVolume.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4LogicalVolume.icc \
   /Users/ab2444/Geant4/geant4-v11.4.3-install/include/Geant4/G4PVPlacement.hh \

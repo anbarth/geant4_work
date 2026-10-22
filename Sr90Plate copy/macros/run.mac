@@ -1,5 +1,0 @@
-# Batch run:  ./sim run.mac
-/run/numberOfThreads 4
-/run/initialize
-/run/printProgress 100000
-/run/beamOn 1000000
