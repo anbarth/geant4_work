@@ -140,18 +140,16 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     // ---------- Sr-90 applicator above the plate, window facing down ----------
     auto* solidHousing = new G4Tubs("Housing", 0., fHousingRadius, fHousingHeight / 2, 0., 360. * deg);
-    //auto* logicHousing = new G4LogicalVolume(solidHousing, steel, "Housing");
     auto* logicHousing = new G4LogicalVolume(solidHousing, silver, "Housing");
     G4VisAttributes housingVis(G4Colour(0.6, 0.6, 0.6, 0.5));
-    //housingVis.SetForceWireframe(true);
     logicHousing->SetVisAttributes(housingVis);
 
-    G4double zHousing = fPlateZ / 2 + fGap + fHousingHeight / 2;
+    //G4double zHousing = fPlateZ / 2 + fGap + fHousingHeight / 2;
+    G4double zHousing = -fPlateZ/2 - fHousingHeight/2;
     new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zHousing), logicHousing,
                       "Housing", logicWorld, false, 0, true);
 
     auto* solidSource = new G4Tubs("Source", 0., fSourceRadius, fSourceThickness / 2, 0., 360. * deg);
-    //auto* logicSource = new G4LogicalVolume(solidSource, srtio3, "Source");
     auto* logicSource = new G4LogicalVolume(solidSource, strontium, "Source");
     logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1.0, 0.8, 0.0)));
 
