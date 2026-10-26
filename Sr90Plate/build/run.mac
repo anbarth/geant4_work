@@ -2,4 +2,4 @@
 /run/numberOfThreads 24
 /run/initialize
 /run/printProgress 100000
-/run/beamOn 500000
+/run/beamOn 1000000

@@ -22,7 +22,7 @@ void ActionInitialization::Build() const
     SetUserAction(new PrimaryGenerator());
     SetUserAction(new RunAction(det));
 
-    auto* eventAction = new EventAction();
+    auto* eventAction = new EventAction(det);
     SetUserAction(eventAction);
     SetUserAction(new SteppingAction(det, eventAction));
 }

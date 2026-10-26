@@ -10,12 +10,63 @@
 #include <cmath>
 #include <fstream>
 #include <iomanip>
+#include <string>
 
 RunAction::RunAction(const DetectorConstruction* det) : fDetector(det) {}
 
 G4Run* RunAction::GenerateRun()
 {
-    return new Run(DetectorConstruction::kWells);
+    return new Run(DetectorConstruction::kWells, fDetector->GetNumVoxels());
+}
+
+void RunAction::WriteVoxelResults(const Run* run, G4int nEvents) const
+{
+    const auto& vsum = run->GetVoxelSum();
+    const auto& vsum2 = run->GetVoxelSum2();
+    const G4int nVox = fDetector->GetNumVoxels();
+    if (nVox == 0 || static_cast<G4int>(vsum.size()) != nVox) return;
+
+    const char rowName[] = "ABCDEF";
+    const G4int well = fDetector->GetVoxelWell();
+    const std::string wellName = std::string(1, rowName[well / DetectorConstruction::kCols])
+                                 + std::to_string(well % DetectorConstruction::kCols + 1);
+
+    std::ofstream csv("voxel_dose.csv");
+    csv << "ix,iy,x_mm,y_mm,area_mm2,edep_per_decay_MeV,dose_per_decay_Gy,rel_error,"
+           "dose_rate_Gy_per_h_at_1MBq\n"
+        << std::setprecision(6) << std::scientific;
+
+    G4int nWritten = 0;
+    G4double maxRate = 0.;   // Gy/h at 1 MBq
+    for (G4int i = 0; i < nVox; ++i) {
+        const G4double mass = fDetector->GetVoxelMass(i);
+        if (mass <= 0.) continue;   // voxel completely outside the well
+
+        const G4double meanEdep = vsum[i] / nEvents;                          // per decay
+        const G4double doseGy = (meanEdep / mass) / gray;                     // per decay
+        const G4double rate = doseGy * kActivity_Bq * 3600.;                  // Gy/h
+
+        G4double rel = 0.;
+        if (vsum[i] > 0.) {
+            const G4double var = std::max(0., vsum2[i] - vsum[i] * vsum[i] / nEvents);
+            rel = std::sqrt(var) / vsum[i];
+        }
+
+        G4double x, y;
+        fDetector->GetVoxelCentre(i, x, y);
+        csv << i % fDetector->GetVoxelsPerSide() << "," << i / fDetector->GetVoxelsPerSide() << ","
+            << x / mm << "," << y / mm << "," << fDetector->GetVoxelArea(i) / mm2 << ","
+            << meanEdep / MeV << "," << doseGy << "," << rel << "," << rate << "\n";
+        maxRate = std::max(maxRate, rate);
+        ++nWritten;
+    }
+
+    G4cout << " Voxel scoring, well " << wellName << ": " << nWritten << " voxels of "
+           << fDetector->GetVoxelSize() / mm << " x " << fDetector->GetVoxelSize() / mm << " x "
+           << fDetector->GetCellLayerThickness() / mm << " mm\n"
+           << " Highest voxel dose rate: " << std::setprecision(3) << std::scientific
+           << maxRate * 1000. << " mGy/h at 1 MBq. Written to voxel_dose.csv\n"
+           << std::defaultfloat;
 }
 
 void RunAction::EndOfRunAction(const G4Run* run)
@@ -84,7 +135,8 @@ void RunAction::EndOfRunAction(const G4Run* run)
         G4cout << "\n";
     }
     G4cout << std::defaultfloat
-           << "\n Per-well results written to well_dose.csv\n"
-           << "-----------------------------------------------------------------------\n"
+           << "\n Per-well results written to well_dose.csv\n";
+    if (fDetector->VoxelScoring()) WriteVoxelResults(myRun, nEvents);
+    G4cout << "-----------------------------------------------------------------------\n"
            << G4endl;
 }

@@ -4,6 +4,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4ThreeVector.hh"
 #include "G4SystemOfUnits.hh"
+#include <vector>
 
 class G4LogicalVolume;
 class G4VPhysicalVolume;
@@ -40,6 +41,23 @@ public:
     // Mass of the scored region in ONE well (what the dose is divided by)
     G4double GetScoredMass() const;
 
+    // ---- Voxel scoring: cell layer of ONE well split into fVoxelSize x fVoxelSize voxels ----
+    // The geometry is not changed: energy deposited in the cell layer of that well is binned
+    // by (x, y) position in the stepping action. Voxels cut by the well wall have a smaller
+    // mass (only the area inside the well counts).
+    G4bool VoxelScoring() const { return fVoxelScoring; }
+    G4int GetVoxelWell() const { return fVoxelWell; }               // well index = row*kCols + col
+    G4int GetVoxelsPerSide() const { return fNVox; }
+    G4int GetNumVoxels() const { return fVoxelScoring ? fNVox * fNVox : 0; }
+    G4double GetVoxelSize() const { return fVoxelSize; }
+    G4ThreeVector GetVoxelWellCentre() const { return fVoxelWellCentre; }
+    // Voxel containing (x, y) given relative to the well axis; -1 if outside the grid
+    G4int GetVoxelIndex(G4double xLocal, G4double yLocal) const;
+    // Voxel centre relative to the well axis
+    void GetVoxelCentre(G4int index, G4double& xLocal, G4double& yLocal) const;
+    G4double GetVoxelArea(G4int index) const { return fVoxelArea[index]; }   // part inside the well
+    G4double GetVoxelMass(G4int index) const;
+
     // Active disc of the source (for primary generation)
     G4double GetSourceRadius() const { return fSourceRadius; }
     G4double GetSourceThickness() const { return fSourceThickness; }
@@ -63,6 +81,14 @@ private:
     G4bool fScoreCellLayerOnly = true;
     G4double fCellLayerThickness = 50.0 * um;
 
+    // Voxel scoring in the cell layer of one well (writes voxel_dose.csv). Off by default.
+    // The voxels are fVoxelSize x fVoxelSize in x and y and fCellLayerThickness thick, laid out on
+    // a grid centred on the well axis.
+    G4bool fVoxelScoring = true;
+    char fVoxelRow = 'C';             // well to divide into voxels: row A-F ...
+    G4int fVoxelCol = 5;              // ... and column 1-8 (C5 is the well right under the source)
+    G4double fVoxelSize = 0.5 * mm;
+
     // Lid (polystyrene): flat top held above the plate, plus a skirt around the outside.
     // Typical values - set them to match the datasheet of your plate.
     G4bool fHasLid = true;              // false = no lid at all
@@ -83,9 +109,16 @@ private:
     G4double fSourceY = fWellPitch/2;
     // ----------------------------------------
 
+    void SetupVoxels();   // fills the members below; called from the constructor
+
     G4LogicalVolume* fLiquidLV = nullptr;      // liquid above the cell layer
     G4LogicalVolume* fCellLayerLV = nullptr;   // bottom layer of the liquid
     G4ThreeVector fSourceCentre;
+
+    G4int fVoxelWell = 0;                      // index of the well being voxelised
+    G4int fNVox = 0;                           // voxels per side
+    G4ThreeVector fVoxelWellCentre;            // x, y of that well in the world frame
+    std::vector<G4double> fVoxelArea;          // area of each voxel inside the well
 };
 
 #endif

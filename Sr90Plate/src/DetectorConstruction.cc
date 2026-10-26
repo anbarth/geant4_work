@@ -12,7 +12,87 @@
 #include "G4VisAttributes.hh"
 #include "G4Colour.hh"
 
-DetectorConstruction::DetectorConstruction() {}
+#include <algorithm>
+#include <cmath>
+
+namespace {
+// Area of the overlap between the rectangle [x0,x1] x [y0,y1] and a disc of radius R centred on
+// the origin: integrate the length of the chord inside the rectangle over x (midpoint rule).
+G4double RectDiscOverlap(G4double x0, G4double x1, G4double y0, G4double y1, G4double R)
+{
+    const G4double a = std::max(x0, -R);
+    const G4double b = std::min(x1, R);
+    if (b <= a) return 0.;
+    const G4int n = 2000;
+    const G4double dx = (b - a) / n;
+    G4double area = 0.;
+    for (G4int k = 0; k < n; ++k) {
+        const G4double x = a + (k + 0.5) * dx;
+        const G4double h = std::sqrt(std::max(0., R * R - x * x));   // half chord at this x
+        area += std::max(0., std::min(y1, h) - std::max(y0, -h)) * dx;
+    }
+    return area;
+}
+}  // namespace
+
+DetectorConstruction::DetectorConstruction()
+{
+    if (fVoxelScoring) SetupVoxels();
+}
+
+void DetectorConstruction::SetupVoxels()
+{
+    if (fVoxelRow < 'A' || fVoxelRow >= 'A' + kRows || fVoxelCol < 1 || fVoxelCol > kCols) {
+        G4Exception("DetectorConstruction::SetupVoxels", "Vox001", FatalException,
+                    "fVoxelRow must be a letter A-F and fVoxelCol a number 1-8.");
+    }
+    if (fVoxelSize <= 0.) {
+        G4Exception("DetectorConstruction::SetupVoxels", "Vox002", FatalException,
+                    "fVoxelSize must be positive.");
+    }
+
+    const G4int row = fVoxelRow - 'A';
+    const G4int col = fVoxelCol - 1;
+    fVoxelWell = row * kCols + col;
+    fVoxelWellCentre = G4ThreeVector((col - (kCols - 1) / 2.0) * fWellPitch,
+                                     ((kRows - 1) / 2.0 - row) * fWellPitch, 0.);
+
+    // Square grid centred on the well axis, just big enough to cover the well
+    fNVox = static_cast<G4int>(std::ceil(fWellDiameter / fVoxelSize - 1e-9));
+    const G4double half = fNVox * fVoxelSize / 2;
+    const G4double R = fWellDiameter / 2;
+
+    fVoxelArea.assign(fNVox * fNVox, 0.);
+    for (G4int iy = 0; iy < fNVox; ++iy) {
+        for (G4int ix = 0; ix < fNVox; ++ix) {
+            const G4double x0 = -half + ix * fVoxelSize;
+            const G4double y0 = -half + iy * fVoxelSize;
+            fVoxelArea[iy * fNVox + ix] = RectDiscOverlap(x0, x0 + fVoxelSize, y0, y0 + fVoxelSize, R);
+        }
+    }
+}
+
+G4int DetectorConstruction::GetVoxelIndex(G4double xLocal, G4double yLocal) const
+{
+    const G4double half = fNVox * fVoxelSize / 2;
+    const G4int ix = static_cast<G4int>(std::floor((xLocal + half) / fVoxelSize));
+    const G4int iy = static_cast<G4int>(std::floor((yLocal + half) / fVoxelSize));
+    if (ix < 0 || ix >= fNVox || iy < 0 || iy >= fNVox) return -1;
+    return iy * fNVox + ix;
+}
+
+void DetectorConstruction::GetVoxelCentre(G4int index, G4double& xLocal, G4double& yLocal) const
+{
+    const G4double half = fNVox * fVoxelSize / 2;
+    xLocal = -half + ((index % fNVox) + 0.5) * fVoxelSize;
+    yLocal = -half + ((index / fNVox) + 0.5) * fVoxelSize;
+}
+
+G4double DetectorConstruction::GetVoxelMass(G4int index) const
+{
+    if (!fCellLayerLV) return 0.;
+    return fVoxelArea[index] * fCellLayerThickness * fCellLayerLV->GetMaterial()->GetDensity();
+}
 
 G4double DetectorConstruction::GetScoredMass() const
 {
@@ -142,10 +222,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     auto* solidHousing = new G4Tubs("Housing", 0., fHousingRadius, fHousingHeight / 2, 0., 360. * deg);
     auto* logicHousing = new G4LogicalVolume(solidHousing, silver, "Housing");
     G4VisAttributes housingVis(G4Colour(0.6, 0.6, 0.6, 0.5));
+    //housingVis.SetForceWireframe(true);
     logicHousing->SetVisAttributes(housingVis);
 
     //G4double zHousing = fPlateZ / 2 + fGap + fHousingHeight / 2;
-    G4double zHousing = -fPlateZ/2 - fHousingHeight/2;
+    G4double zHousing = -fPlateZ / 2 - fHousingHeight / 2;
     new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zHousing), logicHousing,
                       "Housing", logicWorld, false, 0, true);
 

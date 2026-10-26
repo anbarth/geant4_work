@@ -5,19 +5,24 @@
 #include "globals.hh"
 #include <vector>
 
+class DetectorConstruction;
+
 class EventAction : public G4UserEventAction
 {
 public:
-    EventAction();
+    explicit EventAction(const DetectorConstruction* det);
     ~EventAction() override = default;
 
     void BeginOfEventAction(const G4Event*) override;
     void EndOfEventAction(const G4Event*) override;
 
     void AddEdep(G4int well, G4double edep) { fEdep[well] += edep; }
+    void AddVoxelEdep(G4int voxel, G4double edep) { fVoxelEdep[voxel] += edep; }
 
 private:
-    std::vector<G4double> fEdep;
+    const DetectorConstruction* fDetector;
+    std::vector<G4double> fEdep;        // per well, this event
+    std::vector<G4double> fVoxelEdep;   // per voxel of the chosen well, this event (empty if off)
 };
 
 #endif

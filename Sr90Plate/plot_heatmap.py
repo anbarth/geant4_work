@@ -72,8 +72,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("csv", nargs="?", default="build/well_dose.csv", help="input CSV (default: build/well_dose.csv)")
     ap.add_argument("-o", "--output", default="well_dose_heatmap.png", help="output image (png/pdf/svg)")
-    ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_per_decay",
-                    help="what to plot (default: dose_per_decay)")
+    ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_rate",
+                    help="what to plot (default: dose_rate)")
     ap.add_argument("-a", "--activity", type=float, default=1.0,
                     help="Sr-90 activity in MBq; dose_rate only (CSV is for 1 MBq). Default 1")
     ap.add_argument("-t", "--time-unit", choices=TIME_FACTORS, default="h",
