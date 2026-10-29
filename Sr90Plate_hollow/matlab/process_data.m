@@ -1,0 +1,36 @@
+%% compare the 3 different positions
+pos1 = readmatrix("results\2026.10.29_cutoff_dist_2.5um\voxprofile_C_dose_rate.csv");
+pos2 = readmatrix("results\2026.10.29_source_c4_c5_quarter\voxprofile_C_dose_rate.csv");
+pos3 = readmatrix("results\2026.10.29_source_c4_c5\voxprofile_C_dose_rate.csv");
+
+wellpitch = 13; % mm
+figure; hold on; prettyplot;
+xlabel('position along row C (mm)')
+ylabel('dose rate (Gy/hr)')
+errorbar(pos1(:,1),pos1(:,2),pos1(:,3),'-o');
+errorbar(pos2(:,1)+wellpitch/4,pos2(:,2),pos2(:,3),'-o');
+errorbar(pos3(:,1)+wellpitch/2,pos3(:,2),pos3(:,3),'-o');
+legend('under C5','25% between C5 and C4','50% between C5 and C4')
+
+%% compare the different energy cutoffs
+cutoff2p5 = pos1;
+cutoff5 = readmatrix("results\2026.10.29_cutoff_dist_5um\voxprofile_C_dose_rate.csv");
+cutoff10 = readmatrix("results\2026.10.29_cutoff_dist_10um\voxprofile_C_dose_rate.csv");
+figure; hold on; prettyplot;
+xlabel('position along row C (mm)');
+ylabel('dose rate (Gy/hr)');
+errorbar(cutoff2p5(:,1),cutoff2p5(:,2),cutoff2p5(:,3),'-o');
+errorbar(cutoff5(:,1),cutoff5(:,2),cutoff5(:,3),'-o');
+errorbar(cutoff10(:,1),cutoff10(:,2),cutoff10(:,3),'-o');
+legend('2.5 \mum','5 \mum','10 \mum');
+
+%% compare the different physics lists
+standard_opt4 = pos1;
+penelope = readmatrix("results\2026.10.29_penelope\voxprofile_C_dose_rate.csv");
+figure; hold on; prettyplot;
+xlabel('position along row C (mm)');
+ylabel('dose rate (Gy/hr)');
+errorbar(standard_opt4(:,1),standard_opt4(:,2),standard_opt4(:,3),'-o');
+errorbar(penelope(:,1),penelope(:,2),penelope(:,3),'-o');
+legend('standard (opt 4)','penelope');
+
