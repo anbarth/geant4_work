@@ -22,6 +22,8 @@ Examples
     python fit_voxel_profile.py voxel_dose.csv --row C --strip 2.0       # strip 2 mm wide (default: 2 voxels)
     python fit_voxel_profile.py voxel_dose.csv --col 5 --offset 1.5      # line shifted by 1.5 mm
     python fit_voxel_profile.py voxel_dose.csv --well C5 -a 5 -t min     # Gy/min for 5 MBq
+    python fit_voxel_profile.py voxel_dose.csv --row C --csv-out         # also write x, y, uncertainty to a CSV
+    python fit_voxel_profile.py voxel_dose.csv --row C --csv-out pts.csv -m none
     python fit_voxel_profile.py voxel_dose.csv --well C5 --min-area 0.1 --max-rel-error 0.3
 """
 import argparse
@@ -98,7 +100,7 @@ def main():
     ap.add_argument("--offset", type=float, default=0.0, help="shift the line sideways by this many mm")
     ap.add_argument("-m", "--model", default="gaussian", help="model name (see --list-models), default gaussian; 'none' = plot only, no fit")
     ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_rate")
-    ap.add_argument("-a", "--activity", type=float, default=1.0, help="Sr-90 activity in MBq (dose_rate only)")
+    ap.add_argument("-a", "--activity", type=float, default=1000.0, help="Sr-90 activity in MBq (dose_rate only)")
     ap.add_argument("-t", "--time-unit", choices=fp.TIME_FACTORS, default="h")
     ap.add_argument("--pitch", type=float, default=13.0, help="well pitch in mm (default 13.0)")
     ap.add_argument("--well-diameter", type=float, default=11.0, help="inner well diameter in mm (for the shading)")
@@ -106,6 +108,9 @@ def main():
     ap.add_argument("--max-rel-error", type=float, default=None, help="ignore points with a larger relative error")
     ap.add_argument("--no-weights", action="store_true", help="plain least squares, ignore the errors")
     ap.add_argument("-o", "--output", help="output image")
+    ap.add_argument("--csv-out", nargs="?", const="", metavar="PATH",
+                    help="also write the profile points (x, y, uncertainty) to a CSV; "
+                         "PATH optional (default voxprofile_<line>_<quantity>.csv)")
     ap.add_argument("--show", action="store_true", help="open an interactive window as well")
     ap.add_argument("--list-models", action="store_true")
     args = ap.parse_args()
@@ -186,6 +191,17 @@ def main():
     order = np.argsort(x)
     x, y, sigma = x[order], y[order], sigma[order]
 
+    if args.csv_out is not None:
+        tagc = (args.well or args.row or f"col{args.col}").upper() if (args.well or args.row) else f"col{args.col}"
+        path = args.csv_out or f"voxprofile_{tagc}_{args.quantity}.csv"
+        ulab = unit.replace("/", "_per_").replace("µ", "u")
+        with open(path, "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["x_mm", f"y_{ulab}", f"uncertainty_{ulab}"])
+            for xi, yi, si in zip(x, y, sigma):
+                w.writerow([f"{xi:.6g}", f"{yi:.6g}", f"{si:.6g}"])
+        print(f"Wrote {path} ({len(x)} points)")
+
     qname = {"dose_rate": "Cell-layer dose rate", "dose_per_decay": "Cell-layer dose per decay"}[args.quantity]
     if is_rate:
         qname += f" ({args.activity:g} MBq)"
@@ -202,10 +218,14 @@ def main():
         ax.set_xlabel(axis_label + "   (grey = inside the well)")
         ax.set_title(f"{qname}: {label}", fontsize=12)
         ax.grid(alpha=0.3)
+
+        ax.set_ylim(0,350)
+
         tag = (args.well or args.row or f"col{args.col}").upper() if (args.well or args.row) else f"col{args.col}"
         out = args.output or f"voxprofile_{tag}.png"
         fig.savefig(out, dpi=200, bbox_inches="tight")
         print(f"Wrote {out} (no fit, {len(x)} points)")
+
         if args.show:
             plt.show()
         return
@@ -227,6 +247,7 @@ def main():
     if n <= k:
         print(f"Warning: {n} points for {k} parameters - no degrees of freedom left.", file=sys.stderr)
 
+
     kwargs = {"p0": model.guess(xf_pts, yf_pts), "maxfev": 20000}
     if model.bounds is not None:
         kwargs["bounds"] = model.bounds(xf_pts, yf_pts)
@@ -237,6 +258,9 @@ def main():
     except (RuntimeError, ValueError) as exc:
         sys.exit(f"Fit failed: {exc}\nTry a different model or check the data.")
     perr = np.sqrt(np.diag(pcov)) if np.all(np.isfinite(pcov)) else np.full(k, np.nan)
+
+    # replace fit parameters with initial guess
+    popt = model.guess(xf_pts, yf_pts)
 
     resid = yf_pts - model.func(xf_pts, *popt)
     ss_tot = float(np.sum((yf_pts - yf_pts.mean()) ** 2))
@@ -269,6 +293,7 @@ def main():
     a1.errorbar(x[good], y[good], yerr=sigma[good], fmt="o", ms=3.5, color="black", capsize=2, label="voxels")
     if dropped:
         a1.plot(x[~good], y[~good], "x", color="0.6", label="ignored")
+
     a1.plot(xf, model.func(xf, *popt), color="tab:red", label=f"{model.name} fit")
     a1.set_ylabel(f"{qname} [{unit}]")
     a1.set_title(f"{qname}: {label}", fontsize=12)

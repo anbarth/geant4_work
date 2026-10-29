@@ -117,8 +117,10 @@ private:
     G4double fHousingHeight = 101.2 * um;
     G4double fWindow = 50.0 * um;             // thickness of housing between active disc and outside
     G4double fGap = 30.0 * mm;               // source window to top of plate (NOT to the lid)
-    G4double fSourceX = fWellPitch/2;            // lateral offset of source
-    G4double fSourceY = fWellPitch/2;
+    G4double fSourceX = fWellPitch * 0.25;            // lateral offset of source
+    G4double fSourceY = fWellPitch * 0.5;
+    //G4double fSourceX = 0;            // lateral offset of source
+    //G4double fSourceY = 0;
     // ----------------------------------------
 
     void SetupVoxels();   // fills the members below; called from the constructor

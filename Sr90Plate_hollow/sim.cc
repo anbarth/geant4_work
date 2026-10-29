@@ -4,6 +4,7 @@
 #include "G4VisExecutive.hh"
 #include "G4VModularPhysicsList.hh"
 #include "G4EmStandardPhysics_option4.hh"
+#include "G4EmPenelopePhysics.hh"
 #include "G4DecayPhysics.hh"
 #include "G4RadioactiveDecayPhysics.hh"
 #include "G4SystemOfUnits.hh"
@@ -37,9 +38,10 @@ int main(int argc, char** argv)
     // particle decays, and radioactive decay (Sr90 -> Y90 -> Zr90)
     auto* physics = new G4VModularPhysicsList();
     physics->RegisterPhysics(new G4EmStandardPhysics_option4());
+    //physics->RegisterPhysics(new G4EmPenelopePhysics());
     physics->RegisterPhysics(new G4DecayPhysics());
     physics->RegisterPhysics(new G4RadioactiveDecayPhysics());
-    physics->SetDefaultCutValue(0.01 * mm);
+    physics->SetDefaultCutValue(0.0025 * mm);
     runManager->SetUserInitialization(physics);
 
     runManager->SetUserInitialization(new ActionInitialization());

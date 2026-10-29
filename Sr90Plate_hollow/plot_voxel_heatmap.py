@@ -176,7 +176,7 @@ def main():
     ap.add_argument("-o", "--output", default="voxel_dose_heatmap.png", help="output image (png/pdf/svg)")
     ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_rate",
                     help="what to plot (default: dose_rate)")
-    ap.add_argument("-a", "--activity", type=float, default=1.0,
+    ap.add_argument("-a", "--activity", type=float, default=1000.0,
                     help="Sr-90 activity in MBq; dose_rate only (CSV is for 1 MBq). Default 1")
     ap.add_argument("-t", "--time-unit", choices=TIME_FACTORS, default="h",
                     help="time unit for dose rate: h (hours), min (minutes) or s (seconds). Default h")

@@ -128,6 +128,19 @@ register(Model(
 ))
 
 
+# ---- Parminder's analytic kernel expression -------------------------------
+def basranian(x, A, x0, sigma):
+    return A / (1.0 + np.exp(np.abs(x - x0) / sigma) )
+
+
+register(Model(
+    "basranian", basranian, ["A", "x0", "sigma"],
+    lambda x, y: [float(np.max(y)), _moments(x, y)[0], _moments(x, y)[1]],
+    bounds=lambda x, y: ([0, x.min() - _span(x), 1e-6], [np.inf, x.max() + _span(x), 10 * _span(x)]),
+    doc="A / (1 + exp(|x-x0|/sigma))",
+))
+
+
 # ---- Exponential fall-off from the centre ------------------------------------
 def exp_tail(x, A, x0, L):
     return A * np.exp(-np.abs(x - x0) / L)
