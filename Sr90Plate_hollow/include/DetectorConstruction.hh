@@ -119,8 +119,6 @@ private:
     G4double fGap = 30.0 * mm;               // source window to top of plate (NOT to the lid)
     G4double fSourceX = fWellPitch * 0.25;            // lateral offset of source
     G4double fSourceY = fWellPitch * 0.5;
-    //G4double fSourceX = 0;            // lateral offset of source
-    //G4double fSourceY = 0;
     // ----------------------------------------
 
     void SetupVoxels();   // fills the members below; called from the constructor
