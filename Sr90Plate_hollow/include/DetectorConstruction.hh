@@ -110,12 +110,12 @@ private:
     G4double fLidWall = 1.0 * mm;       // skirt wall thickness
     G4double fLidClearance = 0.5 * mm;  // air gap between plate side and skirt
 
-    // Source applicator
-    G4double fSourceRadius = 8.2 * mm;       // active disc radius
-    G4double fSourceThickness = 1.2 * um;    // active disc thickness
-    G4double fHousingRadius = 8.2 * mm;
-    G4double fHousingHeight = 101.2 * um;
-    G4double fWindow = 50.0 * um;             // thickness of housing between active disc and outside
+    // Source: strontium disc, then a silver disc on each side, then a stainless-steel disc on each side
+    G4double fSourceRadius = 4.1 * mm;       // strontium disc radius
+    G4double fSourceThickness = 1.2 * um;    // strontium disc thickness
+    G4double fSilverThickness = 50.0 * um;   // each of the two silver discs
+    G4double fSteelThickness = 50.0 * um;    // each of the two outer stainless-steel discs 
+    G4double fHousingRadius = 4.1 * mm;      // radius of the silver and steel discs
     G4double fGap = 30.0 * mm;               // source window to top of plate (NOT to the lid)
     G4double fSourceX = fWellPitch * 0.5;
     G4double fSourceY = fWellPitch * 0.5;

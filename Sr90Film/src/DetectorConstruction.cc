@@ -80,7 +80,9 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     // ---------- Materials ----------
     G4Material* air = nist->FindOrBuildMaterial("G4_AIR");
     G4Material* silver = nist->FindOrBuildMaterial("G4_Ag");
+    G4Material* steel = nist->FindOrBuildMaterial("G4_STAINLESS-STEEL");
     G4Material* strontium = nist->FindOrBuildMaterial("G4_Sr");
+    G4Material* water = nist->FindOrBuildMaterial("G4_WATER");
 
     // Radiochromic film. Mass percentages; the active layer's add up to 101.96 %, so
     // MakeMaterial normalises them (and warns).
@@ -115,7 +117,10 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     }
 
     // ---------- World ----------
-    G4double worldX = 100. * mm, worldY = 100. * mm, worldZ = 60. * mm;  // half-lengths
+    // Half-lengths; large enough to hold the water slab (which hangs below the film) with a margin
+    G4double worldX = std::max(100. * mm, fWaterX / 2 + 20. * mm);
+    G4double worldY = std::max(100. * mm, fWaterY / 2 + 20. * mm);
+    G4double worldZ = std::max(60. * mm, (fHasWater ? fWaterThickness : 0.) + 20. * mm);
     auto* solidWorld = new G4Box("World", worldX, worldY, worldZ);
     auto* logicWorld = new G4LogicalVolume(solidWorld, air, "World");
     auto* physWorld = new G4PVPlacement(nullptr, G4ThreeVector(), logicWorld,
@@ -146,26 +151,55 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     new G4PVPlacement(nullptr, G4ThreeVector(fFilmCentreX, fFilmCentreY, zBottomBase),
                       logicBottomBase, "BaseBottom", logicWorld, false, 0, true);
 
-    // ---------- Sr-90 applicator above the film, window facing down ----------
-    auto* solidHousing = new G4Tubs("Housing", 0., fHousingRadius, fHousingHeight / 2, 0., 360. * deg);
-    auto* logicHousing = new G4LogicalVolume(solidHousing, silver, "Housing");
-    logicHousing->SetVisAttributes(G4VisAttributes(G4Colour(0.6, 0.6, 0.6, 0.5)));
+    // ---------- Water slab below the film, touching the bottom base layer ----------
+    if (fHasWater) {
+        if (fWaterThickness <= 0. || fWaterX < fFilmX || fWaterY < fFilmY) {
+            G4Exception("DetectorConstruction::Construct", "Water001", FatalException,
+                        "The water slab must have a positive thickness and be at least as large as the film.");
+        }
+        auto* solidWater = new G4Box("Water", fWaterX / 2, fWaterY / 2, fWaterThickness / 2);
+        auto* logicWater = new G4LogicalVolume(solidWater, water, "Water");
+        logicWater->SetVisAttributes(G4VisAttributes(G4Colour(0.3, 0.5, 1.0, 0.15)));
+        new G4PVPlacement(nullptr,
+                          G4ThreeVector(fFilmCentreX, fFilmCentreY,
+                                        zBottomBase - fBaseThickness / 2 - fWaterThickness / 2),
+                          logicWater, "Water", logicWorld, false, 0, true);
+    }
 
-    // Bottom face of the housing is fGap above the top of the film (z = 0)
-    G4double zHousing = fGap + fHousingHeight / 2;
-    new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zHousing), logicHousing,
-                      "Housing", logicWorld, false, 0, true);
+    // ---------- Sr-90 source: strontium disc between two silver discs, between two steel discs ----------
+    // Five stacked cylinders with touching faces. From the bottom: steel, silver, strontium, silver, steel.
+    // Only the strontium disc contains decaying nuclei (see PrimaryGenerator); the silver and steel
+    // are inactive and only absorb / scatter the betas.
+    struct Layer {
+        const char* name;
+        G4Material* material;
+        G4double thickness;
+        G4double radius;
+        G4Colour colour;
+    };
+    const std::vector<Layer> stack = {
+        {"SteelBottom",  steel,    fSteelThickness,  fHousingRadius, G4Colour(0.45, 0.45, 0.5, 0.6)},
+        {"SilverBottom", silver,   fSilverThickness, fHousingRadius, G4Colour(0.85, 0.85, 0.9, 0.6)},
+        {"Source",       strontium, fSourceThickness, fSourceRadius,  G4Colour(1.0, 0.8, 0.0, 1.0)},
+        {"SilverTop",    silver,   fSilverThickness, fHousingRadius, G4Colour(0.85, 0.85, 0.9, 0.6)},
+        {"SteelTop",     steel,    fSteelThickness,  fHousingRadius, G4Colour(0.45, 0.45, 0.5, 0.6)}};
+    const std::size_t kSourceIndex = 2;
 
-    auto* solidSource = new G4Tubs("Source", 0., fSourceRadius, fSourceThickness / 2, 0., 360. * deg);
-    auto* logicSource = new G4LogicalVolume(solidSource, strontium, "Source");
-    logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1.0, 0.8, 0.0)));
+    G4double stackHeight = 0.;
+    for (const auto& l : stack) stackHeight += l.thickness;
 
-    // Active disc embedded in the housing, `fWindow` above the bottom face of the housing
-    G4double zSourceLocal = -fHousingHeight / 2 + fWindow + fSourceThickness / 2;
-    new G4PVPlacement(nullptr, G4ThreeVector(0, 0, zSourceLocal), logicSource,
-                      "Source", logicHousing, false, 0, true);
-
-    fSourceCentre = G4ThreeVector(fSourceX, fSourceY, zHousing + zSourceLocal);
+    G4double zLayer = fGap;   // bottom face of the stack is fGap above the top of the film (z = 0)
+    for (std::size_t i = 0; i < stack.size(); ++i) {
+        const Layer& l = stack[i];
+        auto* solid = new G4Tubs(l.name, 0., l.radius, l.thickness / 2, 0., 360. * deg);
+        auto* logic = new G4LogicalVolume(solid, l.material, l.name);
+        logic->SetVisAttributes(G4VisAttributes(l.colour));
+        const G4double zCentre = zLayer + l.thickness / 2;
+        new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zCentre), logic, l.name,
+                          logicWorld, false, 0, true);
+        if (i == kSourceIndex) fSourceCentre = G4ThreeVector(fSourceX, fSourceY, zCentre);
+        zLayer += l.thickness;
+    }
 
     return physWorld;
 }

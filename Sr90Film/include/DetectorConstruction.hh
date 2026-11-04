@@ -14,6 +14,7 @@ class G4VPhysicalVolume;
 //   top base layer      (z from -fTopBaseThickness to 0)
 //   active layer        (below it)
 //   bottom base layer   (below the active layer)
+// Below the film there is optionally a slab of water (fHasWater), in contact with the bottom base layer.
 // A Sr-90/Y-90 applicator sits on top with its window facing down (-z), fGap above the top base
 // layer (fGap = 0: window in direct contact with the film).
 // Dose is scored in voxels of the ACTIVE layer: fVoxelSize x fVoxelSize in x and y, and the whole
@@ -52,24 +53,30 @@ public:
 private:
     // ---- Edit these to change the setup ----
     // Film (both layers have the same footprint)
-    G4double fFilmX = 50.0 * mm;
-    G4double fFilmY = 50.0 * mm;
-    G4double fTopBaseThickness = 0.125 * mm;  // base layer above the active layer (facing the source)
+    G4double fFilmX = 25.0 * mm;
+    G4double fFilmY = 25.0 * mm;
+    G4double fTopBaseThickness = 0.025 * mm;  // base layer above the active layer (facing the source)
     G4double fActiveThickness = 0.025 * mm;   // middle layer
-    G4double fBaseThickness = 0.125 * mm;     // base layer below the active layer
+    G4double fBaseThickness = 0.025 * mm;     // base layer below the active layer
     G4double fFilmCentreX = 0.0 * mm;         // film centre in x, y (z: top of the film is at z = 0)
     G4double fFilmCentreY = 0.0 * mm;
+
+    // Water slab below the film, on the side opposite the source (backscatter / phantom)
+    G4bool fHasWater = true;
+    G4double fWaterThickness = 50.0 * mm;
+    G4double fWaterX = 100.0 * mm;            // lateral size, centred under the film
+    G4double fWaterY = 100.0 * mm;
 
     // Voxels in the active layer. fFilmX and fFilmY must be whole multiples of fVoxelSize.
     G4double fVoxelSize = 0.5 * mm;
 
-    // Source applicator
-    G4double fSourceRadius = 8.2 * mm;       // active disc radius
-    G4double fSourceThickness = 1.2 * um;    // active disc thickness
-    G4double fHousingRadius = 8.2 * mm;
-    G4double fHousingHeight = 101.2 * um;
-    G4double fWindow = 50.0 * um;            // thickness of housing between active disc and outside
-    G4double fGap = 0.0 * mm;                // window to top of the film (0 = in contact)
+    // Source: strontium disc, then a silver disc on each side, then a stainless-steel disc on each side
+    G4double fSourceRadius = 4.1 * mm;       // strontium disc radius
+    G4double fSourceThickness = 1.2 * um;    // strontium disc thickness
+    G4double fSilverThickness = 50.0 * um;   // each of the two silver discs
+    G4double fSteelThickness = 50.0 * um;    // each of the two outer stainless-steel discs 
+    G4double fHousingRadius = 4.1 * mm;      // radius of the silver and steel discs
+    G4double fGap = 0.0 * mm;                // bottom of the source stack to top of the film (0 = in contact)
     G4double fSourceX = 0.0 * mm;            // lateral offset of the source from the z axis
     G4double fSourceY = 0.0 * mm;
     // ----------------------------------------

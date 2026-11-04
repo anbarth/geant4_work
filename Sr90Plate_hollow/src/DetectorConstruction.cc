@@ -16,6 +16,7 @@
 #include <cctype>
 #include <cmath>
 #include <string>
+#include <vector>
 
 namespace {
 // Area of the overlap between the rectangle [x0,x1] x [y0,y1] and a disc of radius R centred on
@@ -269,30 +270,40 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
         new G4PVPlacement(nullptr, G4ThreeVector(0, 0, zLid), logicLid, "Lid", logicWorld, false, 0, true);
     }
 
-    // ---------- Sr-90 applicator above the plate, window facing down ----------
-    auto* solidHousing = new G4Tubs("Housing", 0., fHousingRadius, fHousingHeight / 2, 0., 360. * deg);
-    //auto* logicHousing = new G4LogicalVolume(solidHousing, steel, "Housing");
-    auto* logicHousing = new G4LogicalVolume(solidHousing, silver, "Housing");
-    G4VisAttributes housingVis(G4Colour(0.6, 0.6, 0.6, 0.5));
-    //housingVis.SetForceWireframe(true);
-    logicHousing->SetVisAttributes(housingVis);
+    // ---------- Sr-90 source: strontium disc between two silver discs, between two steel discs ----------
+    // Five stacked cylinders with touching faces. From the bottom: steel, silver, strontium, silver, steel.
+    // Only the strontium disc contains decaying nuclei (see PrimaryGenerator); the silver and steel
+    // are inactive and only absorb / scatter the betas.
+    struct Layer {
+        const char* name;
+        G4Material* material;
+        G4double thickness;
+        G4double radius;
+        G4Colour colour;
+    };
+    const std::vector<Layer> stack = {
+        {"SteelBottom",  steel,    fSteelThickness,  fHousingRadius, G4Colour(0.45, 0.45, 0.5, 0.6)},
+        {"SilverBottom", silver,   fSilverThickness, fHousingRadius, G4Colour(0.85, 0.85, 0.9, 0.6)},
+        {"Source",       strontium, fSourceThickness, fSourceRadius,  G4Colour(1.0, 0.8, 0.0, 1.0)},
+        {"SilverTop",    silver,   fSilverThickness, fHousingRadius, G4Colour(0.85, 0.85, 0.9, 0.6)},
+        {"SteelTop",     steel,    fSteelThickness,  fHousingRadius, G4Colour(0.45, 0.45, 0.5, 0.6)}};
+    const std::size_t kSourceIndex = 2;
 
-    // G4double zHousing = fPlateZ / 2 + fGap + fHousingHeight / 2;
-    G4double zHousing = -fPlateZ / 2 - fHousingHeight / 2;
-    new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zHousing), logicHousing,
-                      "Housing", logicWorld, false, 0, true);
+    G4double stackHeight = 0.;
+    for (const auto& l : stack) stackHeight += l.thickness;
 
-    auto* solidSource = new G4Tubs("Source", 0., fSourceRadius, fSourceThickness / 2, 0., 360. * deg);
-    //auto* logicSource = new G4LogicalVolume(solidSource, srtio3, "Source");
-    auto* logicSource = new G4LogicalVolume(solidSource, strontium, "Source");
-    logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1.0, 0.8, 0.0)));
-
-    // Active disc embedded in the steel, `fWindow` above the bottom face of the housing
-    G4double zSourceLocal = -fHousingHeight / 2 + fWindow + fSourceThickness / 2;
-    new G4PVPlacement(nullptr, G4ThreeVector(0, 0, zSourceLocal), logicSource,
-                      "Source", logicHousing, false, 0, true);
-
-    fSourceCentre = G4ThreeVector(fSourceX, fSourceY, zHousing + zSourceLocal);
+    G4double zLayer = -fPlateZ / 2 - stackHeight;   // top face of the stack touches the bottom of the plate
+    for (std::size_t i = 0; i < stack.size(); ++i) {
+        const Layer& l = stack[i];
+        auto* solid = new G4Tubs(l.name, 0., l.radius, l.thickness / 2, 0., 360. * deg);
+        auto* logic = new G4LogicalVolume(solid, l.material, l.name);
+        logic->SetVisAttributes(G4VisAttributes(l.colour));
+        const G4double zCentre = zLayer + l.thickness / 2;
+        new G4PVPlacement(nullptr, G4ThreeVector(fSourceX, fSourceY, zCentre), logic, l.name,
+                          logicWorld, false, 0, true);
+        if (i == kSourceIndex) fSourceCentre = G4ThreeVector(fSourceX, fSourceY, zCentre);
+        zLayer += l.thickness;
+    }
 
     return physWorld;
 }
