@@ -1,7 +1,7 @@
 %% compare the 3 different positions
-pos1 = readmatrix("results\2026.10.29_cutoff_dist_2.5um\voxprofile_C_dose_rate.csv");
-pos2 = readmatrix("results\2026.10.29_source_c4_c5_quarter\voxprofile_C_dose_rate.csv");
-pos3 = readmatrix("results\2026.10.29_source_c4_c5\voxprofile_C_dose_rate.csv");
+pos1 = readmatrix("results\2026.10.29\cutoff_dist_2.5um\voxprofile_C_dose_rate.csv");
+pos2 = readmatrix("results\2026.10.29\source_c4_c5_quarter\voxprofile_C_dose_rate.csv");
+pos3 = readmatrix("results\2026.10.29\source_c4_c5\voxprofile_C_dose_rate.csv");
 
 wellpitch = 13; % mm
 figure; hold on; prettyplot;
@@ -14,8 +14,8 @@ legend('under C5','25% between C5 and C4','50% between C5 and C4')
 
 %% compare the different energy cutoffs
 cutoff2p5 = pos1;
-cutoff5 = readmatrix("results\2026.10.29_cutoff_dist_5um\voxprofile_C_dose_rate.csv");
-cutoff10 = readmatrix("results\2026.10.29_cutoff_dist_10um\voxprofile_C_dose_rate.csv");
+cutoff5 = readmatrix("results\2026.10.29\cutoff_dist_5um\voxprofile_C_dose_rate.csv");
+cutoff10 = readmatrix("results\2026.10.29\cutoff_dist_10um\voxprofile_C_dose_rate.csv");
 figure; hold on; prettyplot;
 xlabel('position along row C (mm)');
 ylabel('dose rate (Gy/hr)');
@@ -26,7 +26,7 @@ legend('2.5 \mum','5 \mum','10 \mum');
 
 %% compare the different physics lists
 standard_opt4 = pos1;
-penelope = readmatrix("results\2026.10.29_penelope\voxprofile_C_dose_rate.csv");
+penelope = readmatrix("results\2026.10.29\penelope\voxprofile_C_dose_rate.csv");
 figure; hold on; prettyplot;
 xlabel('position along row C (mm)');
 ylabel('dose rate (Gy/hr)');
@@ -35,10 +35,10 @@ errorbar(penelope(:,1),penelope(:,2),penelope(:,3),'-o');
 legend('standard (opt 4)','penelope');
 
 %% look at different cuts: fully centered
-full_cut0 =  readmatrix("results\2026.10.29_cutoff_dist_2.5um\line_C5_0deg.csv");
-full_cut23 =  readmatrix("results\2026.10.29_cutoff_dist_2.5um\line_C5_22.5deg.csv");
-full_cut45 =  readmatrix("results\2026.10.29_cutoff_dist_2.5um\line_C5_45deg.csv");
-full_cut90 =  readmatrix("results\2026.10.29_cutoff_dist_2.5um\line_C5_90deg.csv");
+full_cut0 =  readmatrix("results\2026.10.29\cutoff_dist_2.5um\line_C5_0deg.csv");
+full_cut23 =  readmatrix("results\2026.10.29\cutoff_dist_2.5um\line_C5_22.5deg.csv");
+full_cut45 =  readmatrix("results\2026.10.29\cutoff_dist_2.5um\line_C5_45deg.csv");
+full_cut90 =  readmatrix("results\2026.10.29\cutoff_dist_2.5um\line_C5_90deg.csv");
 figure; hold on; prettyplot;
 xlabel('distance from well center (mm)');
 ylabel('dose rate (Gy/hr)');
@@ -48,9 +48,9 @@ errorbar(full_cut45(:,1),full_cut45(:,5),full_cut45(:,6),'-o');
 errorbar(full_cut90(:,1),full_cut90(:,5),full_cut90(:,6),'-o');
 
 %% look at different cuts: half centered
-half_cut0 =  readmatrix("results\2026.10.29_source_c4_c5\line_x0_y6.5_0deg.csv");
-half_cut23 =  readmatrix("results\2026.10.29_source_c4_c5\line_x0_y6.5_22.5deg.csv");
-half_cut45 =  readmatrix("results\2026.10.29_source_c4_c5\line_x0_y6.5_45deg.csv");
+half_cut0 =  readmatrix("results\2026.10.29\source_c4_c5\line_x0_y6.5_0deg.csv");
+half_cut23 =  readmatrix("results\2026.10.29\source_c4_c5\line_x0_y6.5_22.5deg.csv");
+half_cut45 =  readmatrix("results\2026.10.29\source_c4_c5\line_x0_y6.5_45deg.csv");
 figure; hold on; prettyplot;
 xlabel('distance from well center (mm)');
 ylabel('dose rate (Gy/hr)');
