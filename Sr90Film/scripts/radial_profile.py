@@ -61,7 +61,7 @@ def main():
                          "their statistical errors; needs 2 or more voxels per point")
     ap.add_argument("--rmax", type=float, help="ignore voxels further than this (mm)")
     ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_rate")
-    ap.add_argument("-a", "--activity", type=float, default=1.0, help="Sr-90 activity in MBq (dose_rate only)")
+    ap.add_argument("-a", "--activity", type=float, default=1000.0, help="Sr-90 activity in MBq (dose_rate only)")
     ap.add_argument("-t", "--time-unit", choices=TIME_FACTORS, default="h")
     ap.add_argument("--log", action="store_true", help="logarithmic dose axis")
     ap.add_argument("--source-radius", type=float, help="draw a vertical line at the source radius (mm)")

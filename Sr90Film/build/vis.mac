@@ -8,6 +8,7 @@
 /vis/viewer/set/autoRefresh true
 
 # The film is only 50 um thick; zoom in to see the layers, e.g.:
+# (the water slab below is 100 mm thick; hide it with /vis/geometry/set/visibility Water 0 false)
 # /vis/viewer/zoomTo 10
 # /vis/viewer/set/viewpointVector 1 -1 0.3
 # Print the volume hierarchy:
