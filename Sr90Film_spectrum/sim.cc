@@ -37,8 +37,8 @@ int main(int argc, char** argv)
     // Physics: precise EM (needed for low-energy betas in thin layers),
     // particle decays, and radioactive decay (Sr90 -> Y90 -> Zr90)
     auto* physics = new G4VModularPhysicsList();
-    //physics->RegisterPhysics(new G4EmStandardPhysics_option4());
-    physics->RegisterPhysics(new G4EmPenelopePhysics());
+    physics->RegisterPhysics(new G4EmStandardPhysics_option4());
+    //physics->RegisterPhysics(new G4EmPenelopePhysics());
     physics->RegisterPhysics(new G4DecayPhysics());
     physics->RegisterPhysics(new G4RadioactiveDecayPhysics());
     physics->SetDefaultCutValue(0.01 * mm);

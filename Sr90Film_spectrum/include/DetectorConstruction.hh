@@ -89,7 +89,7 @@ private:
     // Spectrum of the electrons crossing a plane next to the steel filter
     G4bool fSpectrumTargetSide = true;       // true: the side of the source facing the target (what reaches it),
                                              // false: the far side
-    G4double fSpectrumPlaneOffset = -50.0 * um; // distance of the plane from the outer face of the steel on that
+    G4double fSpectrumPlaneOffset = 0.0 * um; // distance of the plane from the outer face of the steel on that
                                              // side; positive = further from the source, negative = inside the steel
     G4double fSpectrumRadius = 4.1 * mm;     // radius of the plane, centred on the source axis
     G4double fSpectrumEmax = 2.5 * MeV;      // Y-90 end point is 2.28 MeV; higher energies go in an overflow bin
