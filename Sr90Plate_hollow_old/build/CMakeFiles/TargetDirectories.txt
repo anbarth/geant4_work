@@ -1,3 +1,0 @@
-/Users/ab2444/Geant4/geant4_work/Sr90Plate_hollow/build/CMakeFiles/sim.dir
-/Users/ab2444/Geant4/geant4_work/Sr90Plate_hollow/build/CMakeFiles/edit_cache.dir
-/Users/ab2444/Geant4/geant4_work/Sr90Plate_hollow/build/CMakeFiles/rebuild_cache.dir

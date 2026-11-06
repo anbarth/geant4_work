@@ -1,1 +1,0 @@
-ax1=gca; ax1.XScale='log'; ax1.YScale='log';
