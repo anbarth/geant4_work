@@ -86,18 +86,18 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     // Radiochromic film. Mass percentages; the active layer's add up to 101.96 %, so
     // MakeMaterial normalises them (and warns).
-    // Maryam's numbers
-    //G4Material* activeMat = MakeMaterial("RCF_Active", 0.95 * g / cm3,
-    //    {{"H", 10.8}, {"Li", 0.65}, {"C", 52.98}, {"N", 0.86}, {"O", 29.0},
-    //     {"Na", 0.36}, {"Al", 6.27}, {"S", 0.49}, {"Cl", 0.55}});
-    //G4Material* baseMat = MakeMaterial("RCF_Base", 1.35 * g / cm3,
-    //    {{"H", 4.2}, {"C", 62.5}, {"O", 33.3}});
-    // Palmer et al (with 0.1% tweaks to make 100%)
-    G4Material* activeMat = MakeMaterial("RCF_Active", 1.35 * g / cm3,
-        {{"H", 57.1}, {"Li", 0.6}, {"C", 28.5}, {"N", 0.4}, {"O", 11.7},
-         {"Na", 0.1}, {"Al", 1.4}, {"S", 0.1}, {"Cl", 0.1}});
+    // Maryam's numbers (but with H corrected)
+    G4Material* activeMat = MakeMaterial("RCF_Active", 0.95 * g / cm3,
+        {{"H", 8.907}, {"Li", 0.644}, {"C", 52.957}, {"N", 0.867}, {"O", 28.962},
+         {"Na", 0.355}, {"Al", 6.261}, {"S", 0.496}, {"Cl", 0.548}});
     G4Material* baseMat = MakeMaterial("RCF_Base", 1.35 * g / cm3,
-            {{"H", 36.4}, {"C", 45.5}, {"O", 18.2}});
+        {{"H", 4.2}, {"C", 62.5}, {"O", 33.3}});
+    // Palmer et al -- these are atomic %. we need mass %
+    //G4Material* activeMat = MakeMaterial("RCF_Active", 1.35 * g / cm3,
+    //    {{"H", 57.1}, {"Li", 0.6}, {"C", 28.5}, {"N", 0.4}, {"O", 11.7},
+    //     {"Na", 0.1}, {"Al", 1.4}, {"S", 0.1}, {"Cl", 0.1}});
+    //G4Material* baseMat = MakeMaterial("RCF_Base", 1.35 * g / cm3,
+    //        {{"H", 36.4}, {"C", 45.5}, {"O", 18.2}});
 
     // ---------- Checks ----------
     const G4int nx = GetNumVoxelsX(), ny = GetNumVoxelsY();

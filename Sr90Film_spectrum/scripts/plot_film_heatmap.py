@@ -44,7 +44,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("csv", nargs="?", default="build/voxel_dose.csv")
     ap.add_argument("-q", "--quantity", choices=QUANTITIES, default="dose_rate")
-    ap.add_argument("-a", "--activity", type=float, default=1000.0, help="Sr-90 activity in MBq (dose_rate only)")
+    ap.add_argument("-a", "--activity", type=float, default=500.0, help="Sr-90 activity in MBq (dose_rate only)")
     ap.add_argument("-t", "--time-unit", choices=TIME_FACTORS, default="h")
     ap.add_argument("--log", action="store_true", help="logarithmic colour scale")
     ap.add_argument("--with-error", action="store_true", help="also draw the relative statistical error")
