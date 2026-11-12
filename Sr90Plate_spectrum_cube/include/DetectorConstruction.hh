@@ -59,22 +59,22 @@ public:
 private:
     // ---- Edit these to change the setup ----
     // Plate (standard SBS footprint)
-    G4double fPlateX = 127.76 * mm;
-    G4double fPlateY = 85.48 * mm;
-    G4double fPlateZ = 17.0 * mm;       // total plate height (the lid is separate, see below)
-    G4double fFloor = 1.0 * mm;         // thickness of the rectangular bottom sheet (= well floor)
-    G4double fWellDiameter = 11.0 * mm; // INNER diameter of each well tube
-    G4double fWallThickness = 0.95 * mm; // wall of each well tube. Outer diameter = fWellDiameter +
+    G4double fPlateX = 127.63 * mm;
+    G4double fPlateY = 85.47 * mm;
+    G4double fPlateZ = 19.18 * mm;       // total plate height (the lid is separate, see below) (=well depth+floor thickness=17.78+1.4)
+    G4double fFloor = 1.4 * mm;         // thickness of the rectangular bottom sheet (= well floor)
+    G4double fWellDiameter = 10.0 * mm; // INNER diameter of each well tube
+    G4double fWallThickness = 1.0 * mm; // wall of each well tube. Outer diameter = fWellDiameter +
                                          // 2*fWallThickness must not exceed fWellPitch (13 mm); 0.95 mm
                                          // leaves a 0.1 mm air gap so neighbouring tubes do not touch
-    G4double fWellPitch = 13.0 * mm;
-    G4double fFillHeight = 5.0 * mm;    // liquid depth
+    G4double fWellPitch = 12.9 * mm;
+    G4double fFillHeight = 5.0 * mm;    // liquid depth 
 
     // Lid (polystyrene): flat top held above the plate, plus a skirt around the outside.
     // Typical values - set them to match the datasheet of your plate.
     G4bool fHasLid = true;              // false = no lid at all
     G4double fLidThickness = 1.0 * mm;  // thickness of the flat top
-    G4double fLidAirGap = 1.0 * mm;     // air between plate top and underside of the lid
+    G4double fLidAirGap = 0.5 * mm;     // air between plate top and underside of the lid
     G4double fLidSkirtHeight = 4.0 * mm; // skirt length below the underside of the lid top (0 = no skirt)
     G4double fLidWall = 1.0 * mm;       // skirt wall thickness
     G4double fLidClearance = 0.5 * mm;  // air gap between plate side and skirt
