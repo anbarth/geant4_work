@@ -41,7 +41,7 @@ int main(int argc, char** argv)
     //physics->RegisterPhysics(new G4EmPenelopePhysics());
     physics->RegisterPhysics(new G4DecayPhysics());
     physics->RegisterPhysics(new G4RadioactiveDecayPhysics());
-    physics->SetDefaultCutValue(0.01 * mm);
+    physics->SetDefaultCutValue(0.005 * mm);
     runManager->SetUserInitialization(physics);
 
     runManager->SetUserInitialization(new ActionInitialization());

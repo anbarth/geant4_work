@@ -85,15 +85,15 @@ public:
 private:
     // ---- Edit these to change the setup ----
     // Plate (standard SBS footprint)
-    G4double fPlateX = 127.76 * mm;
-    G4double fPlateY = 85.48 * mm;
-    G4double fPlateZ = 17.0 * mm;       // total plate height (the lid is separate, see below)
-    G4double fFloor = 1.0 * mm;         // thickness of the rectangular bottom sheet (= well floor)
-    G4double fWellDiameter = 11.0 * mm; // INNER diameter of each well tube
-    G4double fWallThickness = 0.95 * mm; // wall of each well tube. Outer diameter = fWellDiameter +
+    G4double fPlateX = 127.63 * mm;
+    G4double fPlateY = 85.47 * mm;
+    G4double fPlateZ = 19.18 * mm;       // total plate height (the lid is separate, see below) (=well depth+floor thickness=17.78+1.4)
+    G4double fFloor = 1.4 * mm;         // thickness of the rectangular bottom sheet (= well floor)
+    G4double fWellDiameter = 10.0 * mm; // INNER diameter of each well tube
+    G4double fWallThickness = 1.0 * mm; // wall of each well tube. Outer diameter = fWellDiameter +
                                          // 2*fWallThickness must not exceed fWellPitch (13 mm); 0.95 mm
                                          // leaves a 0.1 mm air gap so neighbouring tubes do not touch
-    G4double fWellPitch = 13.0 * mm;
+    G4double fWellPitch = 12.9 * mm;
     G4double fFillHeight = 5.0 * mm;    // liquid depth (includes the cell layer)
 
     // Scoring region. The bottom `fCellLayerThickness` of the liquid is a separate volume
@@ -116,7 +116,7 @@ private:
     // Typical values - set them to match the datasheet of your plate.
     G4bool fHasLid = true;              // false = no lid at all
     G4double fLidThickness = 1.0 * mm;  // thickness of the flat top
-    G4double fLidAirGap = 1.0 * mm;     // air between plate top and underside of the lid
+    G4double fLidAirGap = 0.5 * mm;     // air between plate top and underside of the lid
     G4double fLidSkirtHeight = 4.0 * mm; // skirt length below the underside of the lid top (0 = no skirt)
     G4double fLidWall = 1.0 * mm;       // skirt wall thickness
     G4double fLidClearance = 0.5 * mm;  // air gap between plate side and skirt
@@ -130,15 +130,15 @@ private:
     // Spectrum of the electrons crossing a plane next to the steel filter
     G4bool fSpectrumTargetSide = true;       // true: the side of the source facing the target (what reaches it),
                                              // false: the far side
-    G4double fSpectrumPlaneOffset = 0.0 * mm; // distance of the plane from the outer face of the steel on that
+    G4double fSpectrumPlaneOffset = fFloor; // distance of the plane from the outer face of the steel on that
                                              // side; positive = further from the source, negative = inside the steel
     G4double fSpectrumRadius = 4.1 * mm;     // radius of the plane, centred on the source axis
     G4double fSpectrumEmax = 2.5 * MeV;      // Y-90 end point is 2.28 MeV; higher energies go in an overflow bin
     G4double fSpectrumBinWidth = 5.0 * keV;
     G4double fHousingRadius = 4.1 * mm;      // radius of the silver and steel discs
     G4double fGap = 30.0 * mm;               // source window to top of plate (NOT to the lid)
-    G4double fSourceX = fWellPitch * 0;
-    G4double fSourceY = fWellPitch * 0;
+    G4double fSourceX = fWellPitch * 0.5;
+    G4double fSourceY = fWellPitch * 0.5;
     // ----------------------------------------
 
     void SetupVoxels();   // fills the members below; called from the constructor

@@ -5,3 +5,4 @@ Doses are scored in a 50um layer at the bottom of each well; each well is also d
 5e8 events (runtime 75 min on 24 threads)
 Cutoff distance 5um
 This folder contains 3 runs corresponding to 3 different source positions (moving the source in an L shape)
+These simulations are now deprecated -- I have now updated the well plate dimensions. Old dimensions can be seen in git history prior to 11/11/26

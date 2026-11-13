@@ -39,7 +39,7 @@ int main(int argc, char** argv)
     physics->RegisterPhysics(new G4EmStandardPhysics_option4());
     physics->RegisterPhysics(new G4DecayPhysics());
     physics->RegisterPhysics(new G4RadioactiveDecayPhysics());
-    physics->SetDefaultCutValue(2.5 * um);
+    physics->SetDefaultCutValue(5.0 * um);
     runManager->SetUserInitialization(physics);
 
     runManager->SetUserInitialization(new ActionInitialization());
