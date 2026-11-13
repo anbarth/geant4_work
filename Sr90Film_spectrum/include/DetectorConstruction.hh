@@ -84,7 +84,7 @@ private:
     G4double fSourceRadius = 4.1 * mm;       // strontium disc radius
     G4double fSourceThickness = 1.2 * um;    // strontium disc thickness
     G4double fSilverThickness = 50.0 * um;   // each of the two silver discs
-    G4double fSteelThickness = 100.0 * um;    // each of the two outer stainless-steel discs  (placeholder value)
+    G4double fSteelThickness = 50.0 * um;    // each of the two outer stainless-steel discs  (placeholder value)
 
     // Spectrum of the electrons crossing a plane next to the steel filter
     G4bool fSpectrumTargetSide = true;       // true: the side of the source facing the target (what reaches it),

@@ -84,8 +84,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     G4Material* strontium = nist->FindOrBuildMaterial("G4_Sr");
     G4Material* water = nist->FindOrBuildMaterial("G4_WATER");
 
-    // Radiochromic film. Mass percentages; the active layer's add up to 101.96 %, so
-    // MakeMaterial normalises them (and warns).
+    // Radiochromic film. Mass percentages.
     // Maryam's numbers (but with H corrected)
     G4Material* activeMat = MakeMaterial("RCF_Active", 0.95 * g / cm3,
         {{"H", 8.907}, {"Li", 0.644}, {"C", 52.957}, {"N", 0.867}, {"O", 28.962},
