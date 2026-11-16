@@ -34,7 +34,7 @@ import numpy as np
 import matplotlib
 from scipy.optimize import curve_fit
 
-import fit_profile as fp   # models, units helpers (must sit next to this script)
+import Sr90Plate_spectrum.scripts.fit_profile as fp   # models, units helpers (must sit next to this script)
 
 ROWS, COLS = fp.ROWS, fp.COLS
 ROW_NAMES = fp.ROW_NAMES
