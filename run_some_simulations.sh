@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-##### Film spectrum
+##### Film spectrum 1e7
 echo "=========" >> timelog.txt
 date >> timelog.txt
 
@@ -14,7 +14,7 @@ cd ..
 cd ..
 
 
-##### Dose in open position
+##### Dose in open position 1e7
 echo "=========" >> timelog.txt
 date >> timelog.txt
 
@@ -27,7 +27,7 @@ cd ..
 cd ..
 
 
-##### Plate dosage and spectrum
+##### Plate dosage and spectrum 5e8 each
 echo "=========" >> timelog.txt
 cd Sr90Plate_spectrum
 
@@ -68,6 +68,7 @@ for i in "${!POSITIONSX[@]}"; do
     mkdir -p "${outdir}"
     mv build/well_dose.csv "${outdir}/"
     mv build/voxel_dose.csv "${outdir}/"
+    mv build/spectrum.csv "${outdir}/"
  
 
 done

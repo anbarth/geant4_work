@@ -137,8 +137,8 @@ private:
     G4double fSpectrumBinWidth = 5.0 * keV;
     G4double fHousingRadius = 4.1 * mm;      // radius of the silver and steel discs
     G4double fGap = 30.0 * mm;               // source window to top of plate (NOT to the lid)
-    G4double fSourceX = fWellPitch * 0.5;
-    G4double fSourceY = fWellPitch * 0.5;
+    G4double fSourceX = fWellPitch * 0;
+    G4double fSourceY = fWellPitch * 0;
     // ----------------------------------------
 
     void SetupVoxels();   // fills the members below; called from the constructor
